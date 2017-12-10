@@ -1,0 +1,24 @@
+<div class="header-image">
+    <div class="header-text">
+      <h2>Where to?</h2>
+    </div>
+  </div>
+  
+  <div class="container">
+  
+    <ng4geo-autocomplete [userSettings]="userSettings2" (componentCallback)="autoCompleteCallback1($event)"></ng4geo-autocomplete>
+  
+    <div class="pop-cities-text">
+      <h2>Popular Destinations</h2>
+      <hr>
+    </div>
+  
+    <div class="cities-container">
+      <div class="city-item-container" *ngFor="let city of cityItems" [ngStyle]="{'background-image': 'url(' + city.photo + ')'}" >
+        <!-- <img src={{city.photo}}> -->
+        <a [routerLink]="['/destination/' + city.name.trim()]"><h3>{{city.name}}</h3></a>
+      </div>
+    </div>
+  
+  
+  </div>

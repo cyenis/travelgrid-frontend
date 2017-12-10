@@ -1,0 +1,189 @@
+.header-container {
+    margin: 5px 10px;
+    height: 100px;
+  }
+  
+  .auth-top-header {
+    display: none;
+  }
+  
+  .bottom-nav {
+    max-height: 0;
+    opacity: 0;
+    z-index: -10;
+    transition: all 200ms ease;
+    pointer-events: none;
+  }
+  
+  .bottom-nav.visible {
+    max-height: 300px;
+    opacity: 1;
+    z-index: 10;
+    transition: all 200ms ease;
+    pointer-events: auto;
+  }
+  
+  .logo-img {
+    display: inline-block;
+    max-width: 34px;
+    position: relative;
+    top: 3px;
+  }
+  
+  header h1 {
+    font-family: 'Nobile', cursive;
+    font-size: 2rem;
+    display: inline-block;
+    margin-left: 3px;
+    margin-right: 10px;
+    font-weight: normal;
+  }
+  
+  .nav-menu li {
+    display: inline-block;
+  }
+  
+  .burger-menu-icon {
+    position: absolute;
+    right: 25px;
+    top: 10px;
+    max-width: 34px;
+  }
+  
+  .nav-search-bar-container {
+    width: 100%;
+    display: block;
+    position: relative;
+    top: 7px;
+    z-index: 10;
+    margin-right: 20px;
+  }
+  
+  .custom-autocomplete__dropdown[_ngcontent-c1] .currentlocation[_ngcontent-c1] a[_ngcontent-c1], .custom-autocomplete__dropdown[_ngcontent-c1] .heading[_ngcontent-c1], .custom-autocomplete__dropdown[_ngcontent-c1] .main-text[_ngcontent-c1], .custom-autocomplete__dropdown[_ngcontent-c1] .secondary_text[_ngcontent-c1], .button-included[_ngcontent-c1] input[_ngcontent-c1], .custom-autocomplete__input[_ngcontent-c1]   input[_ngcontent-c1] {
+    font-family: 'Nobile', sans-serif;
+  }
+  
+  .top-nav {
+    padding: 10px 0 0 0;
+    height: 100px;
+  }
+  
+  .bottom-nav {
+    background: #f9f9f9;
+  }
+  
+  .bottom-nav-item {
+    line-height: 40px;
+    text-align: center;
+    font-family: 'Nobile', sans-serif;
+    transition: background-color 200ms ease;
+  }
+  
+  .bottom-nav-item:hover {
+    background-color: #ededed;
+    cursor: pointer;
+  }
+  
+  .logo {
+    letter-spacing: 3px;
+    color: #2d2d2d;
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
+  }
+  
+  .logo h1 {
+    margin: 0;
+  }
+  
+  .top-nav .container {
+    position: relative;
+  }
+  
+  .top-nav .container p {
+    display: inline-block;
+    position: relative;
+    top: -10px;
+    margin: 0px 20px;
+  }
+  
+  
+  
+  
+  @media only screen and (min-width: 950px) {
+    .header-container {
+      position: relative;
+    }
+  
+    .logo {
+      top: -4px;
+    }
+  
+    .burger-menu-icon {
+      display: none !important;
+    }
+  
+    .burger-auth-link {
+      display: none;
+    }
+  
+    .auth-top-header {
+      position: absolute;
+      right: 20px;
+      display: inline-block;
+      top: 5px;
+      transition: all 200ms ease;
+    }
+  
+    .auth-top-header p {
+     padding: 10px 10px;
+     display: inline-block;
+     margin-left: 20px;
+    }
+  
+  
+    .auth-top-header p:hover {
+      border-bottom: 2px solid black;
+      transition: all 200ms ease;
+      cursor: pointer;
+    }
+  
+    header h1 {
+      font-size: 2.8rem;
+    }
+  
+    header img {
+      max-width: 40px;
+    }
+  
+    .nav-search-bar-container {
+      width: 40%;
+      display: inline-block;
+      position: relative;
+      top: 3px;
+    }
+  
+    .bottom-nav-item {
+      width: 24.5%;
+      display: inline-block;
+    }
+  
+    .bottom-nav {
+      max-height: 200px;
+      opacity: 1;
+      pointer-events: auto;
+    }
+  
+  
+    .header-container {
+        margin: 10px auto;
+        height: 50px;
+        }
+  
+  }
+  
+  @media only screen and (min-width: 1280px) {
+    .nav-search-bar-container {
+      width: 50%;
+    }
+  }

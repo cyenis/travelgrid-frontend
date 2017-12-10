@@ -2,7 +2,9 @@
 
 <h3 class="site-title"><a [routerLink]="['/profile/edit']">Edit Profile</a></h3>
 
-<img src="https://i.pinimg.com/236x/5b/5f/f3/5b5ff30470a2edc4654aa9a691508aae--facebook-profile.jpg" alt="Profile Picture">
+<img src="{{ user.picture }} " alt="Profile Picture" class="profile-picture">
+
+
 
 
 
@@ -17,4 +19,12 @@
 <h2> Your ID is {{ user.id }}  </h2>
 
 
-
+<form class="update-user" (ngSubmit)="handleUpdateUserForm(myForm)" #myUserForm="ngForm" novalidate [ngClass]="{saving: saving}">
+        <label for="file-upload" class="custom-file-upload">
+          Choose New Picture
+        </label>
+        <input id="file-upload" type="file" name="file" ng2FileSelect [uploader]="uploader" [disabled]="saving" />
+        <button type="submit" name="button" [disabled]="saving">Save Picture</button>
+      </form>
+      
+  

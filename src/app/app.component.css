@@ -29,3 +29,54 @@ justify-content: center;
     font-size: 3em;
     text-align: center;
   }
+
+
+
+
+
+  .site-footer {
+    text-align: center;
+    /*padding-bottom: 20px;*/
+  }
+  
+  .site-footer hr {
+    width: 30px;
+    /*margin: 20px auto;*/
+  }
+  
+  .footer-logo {
+    width: 250px;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1.5rem;
+    font-family: 'Nobile', sans-serif;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    position: relative;
+    top: 10px;
+  }
+  
+  .footer-img {
+    max-width: 20px;
+    display: inline-block;
+  }
+  
+  .footer-logo p {
+    display: inline-block;
+  }
+  
+  .img-container {
+    display: inline-block;
+  }
+
+
+
+  .bottom-image {
+    background-image: url( https://png.pngtree.com/thumb_back/fw800/back_pic/05/06/82/24597067863c92a.jpg);
+    height: 350px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-top: 50px;
+  }
+  

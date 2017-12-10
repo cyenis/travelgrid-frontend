@@ -27,7 +27,14 @@
       </div> -->
 
     </div>
-  
+  <div>
+      <label>For which city is this tip for?</label>
+    <ng4geo-autocomplete [userSettings]="userSettings2" (componentCallback)="autoCompleteCallback1($event)"></ng4geo-autocomplete>
+    
+  </div>
+
+
+
     <div class="field" [ngClass]="{'has-error': feedbackEnabled}">
       <label>Upload a photo</label>
       <input type="file" name="file" [disabled]="processing" ng2FileSelect [uploader]="uploader" required/>

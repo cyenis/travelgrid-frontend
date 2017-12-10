@@ -1,1 +1,157 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*Elements -------------------------------------------------------------------------------------------------------*/
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  
+  /*Typography -------------------------------------------------------------------------------------------------------*/
+  
+  h1, h2, h3, h1, p {
+    padding: 0;
+    margin: 0;
+  }
+  
+  h2, h3 {
+    font-family: 'Nobile', cursive;
+    font-size: 2rem;
+    display: block;
+    font-weight: 200;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+  
+  p {
+    font-family: 'Nobile', sans-serif;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .custom-autocomplete__dropdown[_ngcontent-c2]   .main-text[_ngcontent-c2], .custom-autocomplete__dropdown[_ngcontent-c2]   .currentlocation[_ngcontent-c2]   a[_ngcontent-c2], .custom-autocomplete__dropdown[_ngcontent-c2]   .heading[_ngcontent-c2], .custom-autocomplete__input[_ngcontent-c2]   input[_ngcontent-c2], .custom-autocomplete__dropdown[_ngcontent-c2]   .secondary_text[_ngcontent-c2] {
+    font-family: 'Nobile', sans-serif;
+  }
+  
+  .custom-autocomplete__input[_ngcontent-c2]   input[_ngcontent-c2] {
+    height: 42px !important
+  }
+  
+  .ng2-dropdown-button[_ngcontent-c4] {
+    max-width: none !important;
+    text-align: center;
+  }
+  
+  
+  
+  /*Layout -------------------------------------------------------------------------------------------------------*/
+  
+  .container {
+    margin: 0 10px;
+    transition: width 200ms ease, margin 200ms ease;
+  }
+  
+  .custom-autocomplete__dropdown[_ngcontent-c2] {
+    overflow: hidden;
+  }
+  
+  .custom-autocomplete__input[_ngcontent-c2]   input[_ngcontent-c2] {
+    border-radius: 5px;
+    padding-left: 20px !important;
+  }
+  
+  
+  /*Dropdown -------------------------------------------------------------------------------------------------------*/
+  
+  .mat-select {
+    width: 100%;
+    border: 1px solid #ccc;
+    height: 42px;
+    box-sizing: border-box;
+    padding: 0 20px;
+    font-family: 'Nobile', sans-serif;
+    border-radius: 5px;
+  }
+  
+  .mat-select-trigger {
+    height: 42px !important;
+    line-height: 42px;
+  }
+  
+  .mat-select-underline {
+    display: none !important;
+  }
+  
+  .mat-select-placeholder.mat-floating-placeholder {
+    /*opacity: 0 !important;*/
+    /*z-index: -1000;*/
+  }
+  
+  
+  /*Sticky footer ----------------------------------------------------------------------------------------------------------*/
+  
+  
+  html, body {
+    height: 100%;
+  }
+  
+  .page-wrap {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -142px;
+  }
+  .page-wrap:after {
+    content: "";
+    display: block;
+  }
+  .site-footer, .page-wrap:after {
+    height: 142px;
+  }
+  .site-footer {
+    background: #f9f9f9;
+  }
+  
+  /*Media query stuff -------------------------------------------------------------------------------------------------------*/
+  
+  
+  @media only screen and (min-width: 762px) {
+    .container {
+      margin: 0 30px;
+      transition: width 200ms ease, margin 200ms ease;
+    }
+  }
+  
+  @media only screen and (min-width: 1224px) {
+    .container {
+      width: 85%;
+      margin: 0 auto;
+      transition: width 200ms ease, margin 200ms ease;
+    }
+  }
+  
+  @media only screen and (min-width: 1550px) {
+    .container {
+      width: 70%;
+      margin: 0 auto;
+      transition: width 200ms ease, margin 200ms ease;
+    }
+  }

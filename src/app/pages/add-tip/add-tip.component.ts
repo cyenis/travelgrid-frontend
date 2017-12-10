@@ -27,6 +27,22 @@ export class AddTipComponent implements OnInit {
 
   constructor(private tipService: TipService, private router: Router) {}
 
+  currentCity: string;
+  
+    // Settings for city search bar
+    public userSettings2: any = {
+      geoTypes: ['(cities)'],
+      inputPlaceholderText: 'Search for a city or a destination',
+      showCurrentLocation: false,
+    };
+  
+    // Callback for city search bar
+    autoCompleteCallback1(selectedData:any) {
+      this.currentCity = selectedData.name;
+      this.router.navigate(['/cities', this.currentCity]);
+    }
+
+
   ngOnInit() {}
 
   submitForm(theForm) {

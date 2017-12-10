@@ -1,15 +1,8 @@
-<header class="site-header">
-    <div class="flex-container">
-        <div class="row">
-          <span class="flex-item"><a [routerLink]="['/']">
-         
-           <img src="https://sf6aqq-db3pap001.files.1drv.com/y4mCvqvzFdHtz8CxUDDMbWYu05BKZQgGWfOXpDWCobivt6q5AmQ-vnOc8FbwbWpAmp5q7oSuyKFCue58c8G4xESiry6SJe1Z0cKUMVz1zZCXVzRfHlYycnohxpadVYvzG5A2lM_Rimj9IDpxqRhMIDYfplmVvTL4ooHYk5gFFPfolLu2IScbhRX7FGH6C42rGUU-tD9raGk3X3gAAteSjwoRA?width=256&height=215&cropmode=none" class='logo'  />   
-         </a></span>
-        </div>
-        
-      </div>
+<div class="page-wrap">
     
-    <div [ngClass]="{'is-user': user, 'is-anon': anon}">
+<header class="site-header">
+     
+    <!-- <div [ngClass]="{'is-user': user, 'is-anon': anon}">
       <div *ngIf="loading">
         <span class="username text">loading...</span>
       </div>
@@ -18,23 +11,39 @@
         <a href='/connections'>Connections</a>
         <a href='/tips'>Tips</a>        
         <a (click)="logout()">logout</a>
-        
       </div>
       <div *ngIf="!loading && anon">
         <a (click)="login()">login</a>
         <a (click)="signup()">signup</a>
       </div>
-    </div>  <hr/>
+    </div>  <hr/> -->
   </header>
+
+  <app-header ></app-header>
+  
+
   
   <router-outlet></router-outlet>
 
 
-  <footer class="site-footer">
-    <hr/>
+  <div class="bottom-image">
+      <div class="bottom-overlay">
+      </div>
+    </div>
 
-
-          
-
-  </footer>
   
+
+</div>
+
+
+  <footer class="site-footer">
+  <div class="footer-logo">
+    <div class="img-container">
+      <img class="footer-img" src="https://www.shareicon.net/download/2016/12/30/866944_backpack_512x512.png">
+    </div>
+    <p>travelgrid</p>
+  </div>
+  <hr>
+  <!-- <p>Designed by Constantinos Yenis</p> -->
+  <p>Copyright 2017 </p>
+</footer>

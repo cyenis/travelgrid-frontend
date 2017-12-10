@@ -5,8 +5,8 @@ export class User {
     email: string;
     firstName: string;
     lastName: string;
+    picture: string;
     
-  
     constructor(obj: Object = {}) {
       Object.assign(this, obj);
     }

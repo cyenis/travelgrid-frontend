@@ -80,6 +80,20 @@ export class AuthService {
       });
   }
 
+  updateUser(user) {
+    const options = new RequestOptions();
+    options.withCredentials = true;
+    return this.http.put(apiUrl + '/me', user, options)
+    .map((res) => {
+      const user = new User(res.json());
+      this.setUser(user);
+      return user;
+    })
+  }
+
+
+
+
   getUser() {
     return this.user;
   }

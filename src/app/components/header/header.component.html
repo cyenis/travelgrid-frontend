@@ -1,0 +1,77 @@
+<header>
+    
+    
+        <div class="container">
+    
+        <div class="header-container">
+    
+        <a [routerLink]="['/']">
+          <div class="logo">
+            <img class="logo-img" src="https://www.shareicon.net/download/2016/12/30/866944_backpack_512x512.png">
+            <h1>travelgrid</h1>
+          </div>
+        </a>
+    
+          <img (click)="toggleMenu()" class="burger-menu-icon" src="http://cdn.onlinewebfonts.com/svg/img_510214.png">
+    
+          <!-- <div class="nav-search-bar-container">
+            <ng4geo-autocomplete [userSettings]="userSettings2" (componentCallback)="autoCompleteCallback1($event)"></ng4geo-autocomplete>
+          </div>
+     -->
+     
+    
+          <div class="auth-top-header">
+            <a *ngIf="!user" [routerLink]="['/auth/login']"><p>Login</p></a>
+            <a *ngIf="!user" [routerLink]="['/auth/signup']"><p>Signup</p></a>
+            <a *ngIf="user" [routerLink]="['/profile']"><p>My Profile</p></a>
+            <a *ngIf="user" (click)="logout()"><p>Logout</p></a>
+          </div>
+    
+        </div>
+      </div>
+    
+      <nav class="bottom-nav" [ngClass]="{'visible': toggle}">
+        <div class="container">
+        <ul>
+    
+        <a class="burger-auth-link" [routerLink]="['/auth/login']" (click)="toggleMenu()">
+          <li class="bottom-nav-item">
+            <p>Login</p>
+          </li>
+        </a>
+    
+        <a class="burger-auth-link" [routerLink]="['/auth/signup']" (click)="toggleMenu()">
+          <li class="bottom-nav-item">
+            <p>Sign up</p>
+          </li>
+        </a>
+    
+        <a [routerLink]="['/destination']" (click)="toggleMenu()">
+          <li class="bottom-nav-item">
+            <p>Plan a trip</p>
+          </li>
+        </a>
+    
+        <a [routerLink]="['/tips']" (click)="toggleMenu()">
+          <li class="bottom-nav-item">
+            <p>Tips</p>
+          </li>
+        </a>
+    
+        <a [routerLink]="['/connections']" (click)="toggleMenu()">
+          <li class="bottom-nav-item">
+            <p>Connections</p>
+          </li>
+        </a>
+    
+        <a [routerLink]="['/my-tips']" (click)="toggleMenu()">
+          <li class="bottom-nav-item">
+            <p>My tips</p>
+          </li>
+        </a>
+    
+      </ul>
+        </div>
+      </nav>
+    
+    </header>

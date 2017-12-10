@@ -6,6 +6,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 
+//City autocomplete
+import { Ng4GeoautocompleteModule } from 'ng4-geoautocomplete';
+
 
 import { AppComponent } from './app.component';
 
@@ -39,6 +42,10 @@ import { SingleConnectionComponent } from './components/single-connection/single
 import { PostListComponent } from './components/post-list/post-list.component';
 import { SingleTipComponent } from './pages/single-tip/single-tip.component';
 import { SingleTipIdComponent } from './pages/single-tip-id/single-tip-id.component';
+import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './pages/home/home.component';
+import { DestinationComponent } from './pages/destination/destination.component';
+import { DestinationDetailsComponent } from './pages/destination-details/destination-details.component';
 
 // Router
 const routes: Routes = [
@@ -53,6 +60,8 @@ const routes: Routes = [
   { path: 'add', canActivate: [RequireAuthGuard], component: AddTipComponent },
   { path: 'tips', canActivate: [RequireAuthGuard], component: SingleTipComponent },
   { path: 'tips/:id', canActivate: [RequireAuthGuard], component: SingleTipIdComponent },
+  { path: 'destination', canActivate: [RequireAuthGuard], component: DestinationComponent },
+  { path: 'destination/:id', canActivate: [RequireAuthGuard], component: DestinationDetailsComponent },
   
   
   
@@ -73,11 +82,16 @@ const routes: Routes = [
     AddTipComponent,
     SingleTipComponent,
     SingleTipIdComponent,
+    HeaderComponent,
+    HomeComponent,
+    DestinationComponent,
+    DestinationDetailsComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    Ng4GeoautocompleteModule.forRoot(),
     ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(routes),
