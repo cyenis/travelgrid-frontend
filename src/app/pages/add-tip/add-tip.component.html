@@ -1,0 +1,47 @@
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" novalidate>
+  
+    <div class="field" [ngClass]="{'has-error': feedbackEnabled && myTitle.errors}">
+      <label>Title</label>
+      <input type="text" name="title" [(ngModel)]="tip.title" #myTitle="ngModel" required minlength="4" [disabled]="processing"
+      />
+      <!-- <div *ngIf="feedbackEnabled && myTitle.errors">
+        <p *ngIf="myTitle.errors.required" class="validation">title required</p>
+        <p *ngIf="myTitle.errors.minlength" class="validation">title is too short</p>
+      </div> -->
+    </div>
+  
+    <div class="field" [ngClass]="{'has-error': feedbackEnabled && myContent.errors}">
+      <label>content</label>
+      <input type="text" name="content" [(ngModel)]="tip.content" #myContent="ngModel" [disabled]="processing" min="0" max="99" required/>
+      <!-- <div *ngIf="feedbackEnabled && myContent.errors">
+        <p *ngIf="myContent.errors.required" class="validation">Please add content</p>
+      </div> -->
+  
+    </div>
+    <div class="field" [ngClass]="{'has-error': feedbackEnabled && myDestination.errors}">
+      <label>Destination</label>
+      <input type="text" name="destination" [(ngModel)]="tip.destination" #myDestination="ngModel" [disabled]="processing" min="0" required/>
+  
+      <!-- <div *ngIf="feedbackEnabled && myDestination.errors">
+        <p *ngIf="myDestination.errors.required" class="validation">Where?</p>
+      </div> -->
+
+    </div>
+  
+    <div class="field" [ngClass]="{'has-error': feedbackEnabled}">
+      <label>Upload a photo</label>
+      <input type="file" name="file" [disabled]="processing" ng2FileSelect [uploader]="uploader" required/>
+      <!-- <div *ngIf="feedbackEnabled">
+        <p *ngIf="mymainPicture.errors.required" class="validation">please upload an image of your appartment</p>
+      </div> -->
+    </div>
+  
+    <div class="field submit">
+      <button type="submit" [disabled]="processing">Add your tip</button>
+      <!-- <div *ngIf="feedbackEnabled && myForm.invalid">
+        <p class="validation">there are errors in the form, please review the fields</p>
+      </div> -->
+    </div>
+  </form>
+  
+  
