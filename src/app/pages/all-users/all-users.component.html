@@ -1,0 +1,12 @@
+<ul style="list-style: none">
+    <div *ngIf="users">
+      <li *ngFor="let users of users">
+          <a [routerLink]="['/users',users._id]">  
+      <p>Username: {{users.username}}, Name: {{users.firstName}} {{users.lastName}}</p>
+        <!-- <p><img src="http://localhost:3000{{users.picture}}" alt="User Photo" class='User-photo'> </p> -->
+      </a>
+      <!-- <p>{{tips.user_id.firstName}}</p> -->
+      
+      </li>
+    </div>
+  </ul>

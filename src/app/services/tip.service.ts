@@ -15,7 +15,6 @@ const apiUrl = environment.apiUrl + '/tips';
 
 @Injectable()
 export class TipService {
-
   constructor(private http: Http) {}
 
 

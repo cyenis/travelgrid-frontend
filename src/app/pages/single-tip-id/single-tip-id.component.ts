@@ -10,7 +10,7 @@ import { TipService } from "../../services/tip.service";
 })
 export class SingleTipIdComponent implements OnInit {
 
-  tips: object;
+  tips: {};
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -20,10 +20,11 @@ export class SingleTipIdComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
-      this.tipService
-        .getOneTip(params.id)
-        .subscribe(data => (this.tips = data));
-      console.log(params.id);
+      this.tipService.getOneTip(params.id).subscribe(data => {
+        this.tips = data;
+      });
     });
   }
+
+
 }

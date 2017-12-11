@@ -1,14 +1,14 @@
 <ul style="list-style: none">
   <div *ngIf="tips">
     <li *ngFor="let tips of tips">
-      <a href="/tips/:id"> 
-     <p>{{tips.title}}</p> 
+        <a [routerLink]="['/tips',tips._id]">  
+    <p>{{tips.title}}</p> 
      <p> {{tips.content}}</p>
      <p>{{tips.destination}}</p>
       <p><img src="http://localhost:3000{{tips.picture}}" alt="Tip Photo" class='tip-photo'> </p>
-      <p>{{tips.user_id}}</p>
     </a>
-      <!-- <a [routerLink]="['/tip',user.id]"> ID </a> -->
+    <p>{{tips.user_id.firstName}}</p>
+    
     </li>
   </div>
 </ul>

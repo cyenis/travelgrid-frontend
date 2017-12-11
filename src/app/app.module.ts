@@ -27,6 +27,7 @@ import { RequestUser } from './guards/request-user.guard';
 // Services
 import { AuthService } from './services/auth.service';
 import { TipService } from './services/tip.service';
+import { UserService } from './services/user.service';
 
 
 // Pages
@@ -52,6 +53,8 @@ import { DestinationComponent } from './pages/destination/destination.component'
 import { DestinationDetailsComponent } from './pages/destination-details/destination-details.component';
 import { MapAutocompletePlacesComponent } from './components/map-autocomplete-places/map-autocomplete-places.component';
 import { MapAutocompleteCitiesComponent } from './components/map-autocomplete-cities/map-autocomplete-cities.component';
+import { AllUsersComponent } from './pages/all-users/all-users.component';
+import { SignleUserComponent } from './pages/signle-user/signle-user.component';
 
 // Router
 const routes: Routes = [
@@ -69,6 +72,8 @@ const routes: Routes = [
   { path: 'tips/:id',  component: SingleTipIdComponent },
   { path: 'destination', component: DestinationComponent },
   { path: 'destination/:id',  component: DestinationDetailsComponent },
+  { path: 'users',  component: AllUsersComponent },
+  { path: 'users/:id',  component: SignleUserComponent },
   
   
   
@@ -95,6 +100,8 @@ const routes: Routes = [
     DestinationDetailsComponent,
     MapAutocompletePlacesComponent,
     MapAutocompleteCitiesComponent,
+    AllUsersComponent,
+    SignleUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -113,6 +120,7 @@ const routes: Routes = [
   providers: [
     AuthService,
     TipService,
+    UserService,
     RequireAuthGuard,
     RequireAnonGuard,
   ],
