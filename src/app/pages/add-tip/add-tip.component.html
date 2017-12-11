@@ -16,8 +16,17 @@
       <!-- <div *ngIf="feedbackEnabled && myContent.errors">
         <p *ngIf="myContent.errors.required" class="validation">Please add content</p>
       </div> -->
-  
     </div>
+
+    <div class="field" [ngClass]="{'has-error': feedbackEnabled && myLocation.errors}">
+        <label>Place Location</label>
+        <input type="text" name="location" [(ngModel)]="tip.location" #myLocation="ngModel" [disabled]="processing" min="0" max="99" required/>
+        <!-- <div *ngIf="feedbackEnabled && myContent.errors">
+          <p *ngIf="myContent.errors.required" class="validation">Please add content</p>
+        </div> -->
+      </div>
+
+
     <div class="field" [ngClass]="{'has-error': feedbackEnabled && myDestination.errors}">
       <label>Destination</label>
       <input type="text" name="destination" [(ngModel)]="tip.destination" #myDestination="ngModel" [disabled]="processing" min="0" required/>
@@ -25,13 +34,25 @@
       <!-- <div *ngIf="feedbackEnabled && myDestination.errors">
         <p *ngIf="myDestination.errors.required" class="validation">Where?</p>
       </div> -->
-
     </div>
+
   <div>
       <label>For which city is this tip for?</label>
-    <ng4geo-autocomplete [userSettings]="userSettings2" (componentCallback)="autoCompleteCallback1($event)"></ng4geo-autocomplete>
+    <!-- <ng4geo-autocomplete [userSettings]="userSettings2" (componentCallback)="autoCompleteCallback1($event)"></ng4geo-autocomplete> -->
     
   </div>
+
+
+  <div class="field">
+      <label>City / Destination</label>
+      <app-map-autocomplete-cities (onSelect)="handleLocationSelect($event)" ></app-map-autocomplete-cities>
+    </div>
+
+
+    <div class="field">
+        <label>Place/ Sight / Restaurant</label>
+        <app-map-autocomplete-places (onSelect)="handleLocationSelect($event)" ></app-map-autocomplete-places>
+      </div>
 
 
 

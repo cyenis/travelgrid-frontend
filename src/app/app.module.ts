@@ -9,6 +9,10 @@ import { RouterModule, Routes } from '@angular/router';
 //City autocomplete
 import { Ng4GeoautocompleteModule } from 'ng4-geoautocomplete';
 
+//With maps
+import { AgmCoreModule } from '@agm/core';
+
+
 
 import { AppComponent } from './app.component';
 
@@ -46,6 +50,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DestinationComponent } from './pages/destination/destination.component';
 import { DestinationDetailsComponent } from './pages/destination-details/destination-details.component';
+import { MapAutocompletePlacesComponent } from './components/map-autocomplete-places/map-autocomplete-places.component';
+import { MapAutocompleteCitiesComponent } from './components/map-autocomplete-cities/map-autocomplete-cities.component';
 
 // Router
 const routes: Routes = [
@@ -87,12 +93,18 @@ const routes: Routes = [
     HomeComponent,
     DestinationComponent,
     DestinationDetailsComponent,
+    MapAutocompletePlacesComponent,
+    MapAutocompleteCitiesComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     Ng4GeoautocompleteModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: "AIzaSyDR3bs8bskPY1F7d0bFMvaiQ9J3s9bq16I",
+      libraries: ["places"]
+    }),
     ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(routes),

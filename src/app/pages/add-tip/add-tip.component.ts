@@ -1,9 +1,16 @@
 
 import { Component, OnInit } from '@angular/core';
-import { TipService } from '../../services/tip.service';
+
 import { ActivatedRoute } from "@angular/router";
 import { Router } from "@angular/router";
 import { FileUploader } from "ng2-file-upload";
+import 'rxjs/add/operator/map';
+
+
+import { TipService } from '../../services/tip.service';
+import { Tip } from '../../models/tip.model';
+
+
 
 @Component({
   selector: 'app-add-tip',
@@ -18,6 +25,8 @@ export class AddTipComponent implements OnInit {
     filename: "",
     title: null,
     content: null,
+    location: null,
+    links: null,
     destination: null
   };
   // author = loggedin user;
@@ -27,8 +36,12 @@ export class AddTipComponent implements OnInit {
 
   constructor(private tipService: TipService, private router: Router) {}
 
+
+
+
+
+
   currentCity: string;
-  
     // Settings for city search bar
     public userSettings2: any = {
       geoTypes: ['(cities)'],
@@ -43,7 +56,21 @@ export class AddTipComponent implements OnInit {
     }
 
 
+
+
+
   ngOnInit() {}
+
+  handleLocationSelect(informationArray) {
+    this.tip.title = informationArray[0];
+    this.tip.location = {
+      type: 'Point',
+      coordinates: [informationArray[1].lat(), informationArray[1].lng()]
+    };
+    this.tip.links.googleMaps = informationArray[2];
+  }
+
+
 
   submitForm(theForm) {
     console.log(theForm);
@@ -56,7 +83,7 @@ export class AddTipComponent implements OnInit {
         this.tip.filename = fileData.filename;
         this.tipService
           .createOneTip(this.tip)
-          .subscribe(result => this.router.navigate(['/tips', result.id]));
+          .subscribe(result => this.router.navigate(['tips', result.id]));
       };
     }
   }
