@@ -1,4 +1,9 @@
-<h1>PROFILE PAGE</h1>
+
+  <div class="container">
+    
+
+
+<h1>{{ user.firstName }} profile</h1>
 
 <h3 class="site-title"><a [routerLink]="['/profile/edit']">Edit Profile</a></h3>
 
@@ -8,15 +13,15 @@
 
 
 
-<h2> You are logged in as {{ user.username }}  </h2>
+<p> You are logged in as {{ user.username }}  </p>
 
-<h2> Your email is {{ user.email }}  </h2>
+<p> Your email is {{ user.email }}  </p>
 
-<h2> Your first name is {{ user.firstName }}  </h2>
+<p> Your first name is {{ user.firstName }}  </p>
 
-<h2> Your last name is {{ user.lastName }}  </h2>
+<p> Your last name is {{ user.lastName }}  </p>
 
-<h2> Your ID is {{ user.id }}  </h2>
+<p> Your ID is {{ user.id }}  </p>
 
 
 <form class="update-user" (ngSubmit)="handleUpdateUserForm(myForm)" #myUserForm="ngForm" novalidate [ngClass]="{saving: saving}">
@@ -27,4 +32,4 @@
         <button type="submit" name="button" [disabled]="saving">Save Picture</button>
       </form>
       
-  
+    </div>

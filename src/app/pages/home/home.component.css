@@ -1,0 +1,155 @@
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .splash-image {
+    background-image: url(http://news.umanitoba.ca/wp-content/uploads/2013/09/earth.jpg);
+    height: 300px;
+    background-repeat: no-repeat;
+    background-position: 60% 90%;
+    background-size: cover;
+  }
+  
+  .splash-overlay {
+    background: #0FBABA;  /
+    background: -webkit-linear-gradient(to right, #223766, rgba(161, 255, 206, 0.6));
+    background: linear-gradient(to right, rgba(250, 255, 209, 0.1), rgba(161, 255, 206, 0.6));
+    height: 300px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .splash-text-container {
+    font-weight: 200;
+    color: white;
+    position: relative;
+    font-size: 3rem;
+    font-weight: 300;
+    border: 2px solid white;
+    padding: 20px;
+  }
+  
+  .splash-text-container h2 {
+    font-family: 'Nunito', sans-serif;
+  }
+  
+  .info-text {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px 0;
+  }
+  
+  .info-text h2 {
+    margin: 30px 0
+  }
+  
+  .info-text h3 {
+    margin: 30px 0;
+  }
+  
+  .info-text hr {
+    width: 40px;
+  }
+  
+  .section {
+    background-color: #f7f7f7;
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+  
+  .section h2 {
+    text-align: center;
+    font-size: 3rem;
+    padding: 20px 0;
+  }
+  
+  
+  .cities-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .city-item-container {
+    text-align: center;
+    width: 260px;
+    height: 200px;
+    margin: 20px;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+  }
+  
+  .city-item-container a, .city-item-container h3 {
+    line-height: 200px;
+    background-color: rgba(0,0,0,0.2);
+    color: white;
+    width: 100%;
+    font-weight: 400;
+    border-radius: 20px;
+    transition: all 200ms ease;
+  }
+  
+  .city-item-container a:hover, .city-item-container h3:hover {
+    background-color: rgba(0,0,0,0.3);
+    font-size: 1.6rem;
+    transition: all 200ms ease;
+    cursor: pointer;
+  }
+  
+  .questions-container h3 {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 2rem;
+  }
+  
+  .bottom-image {
+    background-image: url( https://ak4.picdn.net/shutterstock/videos/6607004/thumb/11.jpg);
+    height: 350px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-top: 50px;
+  }
+  
+
+  
+  @media only screen and (min-width: 762px) {
+    .splash-image {
+      height: 500px;
+      background-position: center;
+      background-size: cover;
+    }
+  
+    .splash-overlay {
+      height: 500px;
+    }
+  
+    .splash-overlay h2 {
+      font-size: 5rem;
+    }
+  
+    .splash-overlay h3 {
+      font-size: 2rem;
+      margin-top: 10px;
+    }
+  
+    .splash-text-container {
+      margin: 30px auto;
+    }
+  
+  }
+
+/* 
+  VIDEO BACKGROUND */
+  

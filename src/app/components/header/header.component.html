@@ -14,10 +14,10 @@
     
           <img (click)="toggleMenu()" class="burger-menu-icon" src="http://cdn.onlinewebfonts.com/svg/img_510214.png">
     
-          <!-- <div class="nav-search-bar-container">
+          <div class="nav-search-bar-container">
             <ng4geo-autocomplete [userSettings]="userSettings2" (componentCallback)="autoCompleteCallback1($event)"></ng4geo-autocomplete>
           </div>
-     -->
+    
      
     
           <div class="auth-top-header">
@@ -34,13 +34,15 @@
         <div class="container">
         <ul>
     
-        <a class="burger-auth-link" [routerLink]="['/auth/login']" (click)="toggleMenu()">
+        <a class="burger-auth-link" *ngIf="!user" [routerLink]="['/auth/login']" (click)="toggleMenu()">
           <li class="bottom-nav-item">
             <p>Login</p>
           </li>
         </a>
+
+        
     
-        <a class="burger-auth-link" [routerLink]="['/auth/signup']" (click)="toggleMenu()">
+        <a class="burger-auth-link" *ngIf="!user" [routerLink]="['/auth/signup']" (click)="toggleMenu()">
           <li class="bottom-nav-item">
             <p>Sign up</p>
           </li>
@@ -58,15 +60,25 @@
           </li>
         </a>
     
-        <a [routerLink]="['/connections']" (click)="toggleMenu()">
+        <a *ngIf="user" [routerLink]="['/profile']" (click)="toggleMenu()">
+          <li class="bottom-nav-item">
+            <p>My Profile</p>
+          </li>
+        </a>
+
+
+
+        <a *ngIf="user" [routerLink]="['/connections']" (click)="toggleMenu()">
           <li class="bottom-nav-item">
             <p>Connections</p>
           </li>
         </a>
     
-        <a [routerLink]="['/my-tips']" (click)="toggleMenu()">
+      
+
+        <a *ngIf="user" [routerLink]="['/add']" (click)="toggleMenu()">
           <li class="bottom-nav-item">
-            <p>My tips</p>
+            <p>Add a tip</p>
           </li>
         </a>
     

@@ -49,7 +49,8 @@ import { DestinationDetailsComponent } from './pages/destination-details/destina
 
 // Router
 const routes: Routes = [
-  { path: '', redirectTo: '/', pathMatch: 'full' , canActivate: [RequestUser] },
+  { path: '', redirectTo: 'home', pathMatch: 'full' , canActivate: [RequestUser] },
+  { path: 'home', component: HomeComponent },
   { path: 'auth/login', canActivate: [RequireAnonGuard], component: LoginPageComponent },
   { path: 'auth/signup', canActivate: [RequireAnonGuard], component: SignupPageComponent },
   { path: 'profile', canActivate: [RequireAuthGuard], component: ProfilePageComponent },
@@ -58,10 +59,10 @@ const routes: Routes = [
   { path: 'connections/:id', canActivate: [RequireAuthGuard], component: SingleConnectionComponent },
   { path: 'posts', canActivate: [RequireAuthGuard], component: PostListComponent },
   { path: 'add', canActivate: [RequireAuthGuard], component: AddTipComponent },
-  { path: 'tips', canActivate: [RequireAuthGuard], component: SingleTipComponent },
-  { path: 'tips/:id', canActivate: [RequireAuthGuard], component: SingleTipIdComponent },
-  { path: 'destination', canActivate: [RequireAuthGuard], component: DestinationComponent },
-  { path: 'destination/:id', canActivate: [RequireAuthGuard], component: DestinationDetailsComponent },
+  { path: 'tips',  component: SingleTipComponent },
+  { path: 'tips/:id',  component: SingleTipIdComponent },
+  { path: 'destination', component: DestinationComponent },
+  { path: 'destination/:id',  component: DestinationDetailsComponent },
   
   
   

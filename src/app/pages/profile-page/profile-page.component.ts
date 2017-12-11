@@ -22,7 +22,7 @@ export class ProfilePageComponent implements OnInit {
   user = null;
   subscriptions = [];
   saving = false;
-  apiUrl = environment.apiUrl
+  apiUrl = environment.apiUrl;
   editUser = new User;
   userData: User;
   file: any;
@@ -45,31 +45,31 @@ export class ProfilePageComponent implements OnInit {
     };
     this.uploader.onErrorItem = (item, response, status, headers) => {
       this.feedback = JSON.parse(response).message;
-    }
-    
-
-// Save uploaded photo
-private submit() {
-  this.saving = true;
-  this.auth.updateUser(this.editUser).subscribe(() => {
-    this.saving = false;
-  })
-}
-
-// Handle the updated photo form
-handleUpdateUserForm(myForm) {
-  const files = this.uploader.getNotUploadedItems();
-  if (files.length) {
-    this.uploader.uploadAll();
-    this.uploader.onCompleteItem = (item, response) => {
-      let data = JSON.parse(response);
-      this.editUser.pic_path = data.userFileName;
-      this.submit();
     };
-  }
-  else {
-    this.submit();
-  }
+
+// // Save uploaded photo
+// private submit() {
+//   this.saving = true;
+//   this.auth.updateUser(this.editUser).subscribe(() => {
+//     this.saving = false;
+//   })
+// }
+
+// // Handle the updated photo form
+// handleUpdateUserForm(myForm) {
+//   const files = this.uploader.getNotUploadedItems();
+//   if (files.length) {
+//     this.uploader.uploadAll();
+//     this.uploader.onCompleteItem = (item, response) => {
+//       let data = JSON.parse(response);
+//       this.editUser.pic_path = data.userFileName;
+//       this.submit();
+//     };
+//   }
+//   else {
+//     this.submit();
+//   }
+
 }
 
 }
