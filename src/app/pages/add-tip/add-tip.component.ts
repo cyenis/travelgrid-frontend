@@ -27,6 +27,7 @@ export class AddTipComponent implements OnInit {
     content: null,
     location: null,
     links: null,
+    postStatus: null,
     destination: null
   };
   // author = loggedin user;
@@ -62,11 +63,14 @@ export class AddTipComponent implements OnInit {
   ngOnInit() {}
 
   handleLocationSelect(informationArray) {
+    console.log(informationArray);
     this.tip.title = informationArray[0];
     this.tip.location = {
       type: 'Point',
       coordinates: [informationArray[1].lat(), informationArray[1].lng()]
     };
+
+
     this.tip.links.googleMaps = informationArray[2];
   }
 
@@ -83,7 +87,12 @@ export class AddTipComponent implements OnInit {
         this.tip.filename = fileData.filename;
         this.tipService
           .createOneTip(this.tip)
-          .subscribe(result => this.router.navigate(['tips', result.id]));
+          // .subscribe(result => this.router.navigate(['/home']));
+          .subscribe(result => {
+            console.log('result: ', result);
+            this.router.navigate(['/tips/' + result._id]);
+          }
+        );
       };
     }
   }

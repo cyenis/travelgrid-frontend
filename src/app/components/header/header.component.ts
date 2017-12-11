@@ -44,19 +44,19 @@ logout() {
     this.toggle=!this.toggle;
   }
 
-  // Callback from city search bar
-  autoCompleteCallback1(selectedData:any) {
-    this.currentCity = selectedData.name
-    this.notify.emit(this.currentCity);
-    this.router.navigate(['/cities', this.currentCity]);
-  }
+  // // Callback from city search bar
+  // autoCompleteCallback1(selectedData:any) {
+  //   this.currentCity = selectedData.name
+  //   this.notify.emit(this.currentCity);
+  //   this.router.navigate(['/cities', this.currentCity]);
+  // }
 
-  // Settings for city search bar
-  public userSettings2: any = {
-    geoTypes: ['(cities)'],
-    inputPlaceholderText: 'Search...',
-    showCurrentLocation: false,
-  };
+  // // Settings for city search bar
+  // public userSettings2: any = {
+  //   geoTypes: ['(cities)'],
+  //   inputPlaceholderText: 'Search...',
+  //   showCurrentLocation: false,
+  // };
 
 
 

@@ -1,7 +1,7 @@
 <form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" novalidate>
   
     <div class="field" [ngClass]="{'has-error': feedbackEnabled && myTitle.errors}">
-      <label>Title</label>
+        <p><label>Title</label></p>
       <input type="text" name="title" [(ngModel)]="tip.title" #myTitle="ngModel" required minlength="4" [disabled]="processing"
       />
       <!-- <div *ngIf="feedbackEnabled && myTitle.errors">
@@ -11,8 +11,8 @@
     </div>
   
     <div class="field" [ngClass]="{'has-error': feedbackEnabled && myContent.errors}">
-      <label>content</label>
-      <input type="text" name="content" [(ngModel)]="tip.content" #myContent="ngModel" [disabled]="processing" min="0" max="99" required/>
+      <p> <label>Content</label>  </p>
+      <textarea rows="4" cols="50" name="content" [(ngModel)]="tip.content" #myContent="ngModel" [disabled]="processing" min="0" max="99" required placeholder="What's going on?"></textarea>
       <!-- <div *ngIf="feedbackEnabled && myContent.errors">
         <p *ngIf="myContent.errors.required" class="validation">Please add content</p>
       </div> -->
@@ -25,6 +25,19 @@
           <p *ngIf="myContent.errors.required" class="validation">Please add content</p>
         </div> -->
       </div>
+
+
+      <div class="field" [ngClass]="{'has-error': feedbackEnabled && myLocation.errors}">
+      <label for="postStatus">Public or Private:</label>
+      <select name="postStatus" [(ngModel)]="tip.postStatus" #myStatus="ngModel" [disabled]="processing">
+          <option value="publicPost">Public</option>
+          <option value="privatePost">Private</option>
+      </select>
+    </div>
+    
+
+
+
 
 
     <div class="field" [ngClass]="{'has-error': feedbackEnabled && myDestination.errors}">
@@ -58,7 +71,7 @@
 
     <div class="field" [ngClass]="{'has-error': feedbackEnabled}">
       <label>Upload a photo</label>
-      <input type="file" name="file" [disabled]="processing" ng2FileSelect [uploader]="uploader" required/>
+      <input type="file" name="file" [disabled]="processing" ng2FileSelect [uploader]="uploader" />
       <!-- <div *ngIf="feedbackEnabled">
         <p *ngIf="mymainPicture.errors.required" class="validation">please upload an image of your appartment</p>
       </div> -->
