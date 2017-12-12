@@ -39,7 +39,6 @@ export class ProfilePageComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
-    this.authService.me();
     this.user = this.authService.getUser();
     this.uploader.onSuccessItem = (item, response) => {
       this.feedback = JSON.parse(response).message;

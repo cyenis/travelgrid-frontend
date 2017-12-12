@@ -4,13 +4,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AgmCoreModule, MapsAPILoader } from '@agm/core';
 import {} from '@types/googlemaps';
 
-@Component({
-  selector: 'app-map-autocomplete-cities',
-  templateUrl: './map-autocomplete-cities.component.html',
-  styleUrls: ['./map-autocomplete-cities.component.css']
-})
-export class MapAutocompleteCitiesComponent implements OnInit {
+// Services
+import { Router } from '@angular/router';
+import { TipService } from "../../services/tip.service";
+import { UserService } from '../../services/user.service';
+import { ActivatedRoute } from "@angular/router";
 
+
+
+@Component({
+  selector: 'app-map-all-connections',
+  templateUrl: './map-all-connections.component.html',
+  styleUrls: ['./map-all-connections.component.css']
+})
+export class MapAllConnectionsComponent implements OnInit {
+
+  users = null;
+  
   public latitude: number;
   public longitude: number;
   public searchControl: FormControl;
@@ -30,12 +40,21 @@ export class MapAutocompleteCitiesComponent implements OnInit {
 
   constructor(
     private mapsAPILoader: MapsAPILoader,
-    private ngZone: NgZone
+    private ngZone: NgZone,
+    private userService: UserService,
+    private router: Router
   ) {}
 
   ngOnInit() {
+
+     // Get ALL USERS @TODO change to connections
+  this.userService.getAllUsers().subscribe(data => {
+    this.users = data;
+    console.log('This is the map talking!' , this.users);
+  });
+  
     // set google maps defaults
-    this.zoom = 10;
+    this.zoom = 4;
     this.latitude = 41.397852;
     this.longitude = 2.164561;
 
@@ -44,6 +63,7 @@ export class MapAutocompleteCitiesComponent implements OnInit {
 
     // set current position
     this.setCurrentPosition();
+
 
     // load Places Autocomplete
     this.mapsAPILoader.load().then(() => {

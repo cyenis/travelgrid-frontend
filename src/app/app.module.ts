@@ -56,6 +56,10 @@ import { MapAutocompleteCitiesComponent } from './components/map-autocomplete-ci
 import { AllUsersComponent } from './pages/all-users/all-users.component';
 import { SignleUserComponent } from './pages/signle-user/signle-user.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { MapAllConnectionsComponent } from './components/map-all-connections/map-all-connections.component';
+import { MapAllMyTipsComponent } from './components/map-all-my-tips/map-all-my-tips.component';
+import { MapConnectionTipsDestinationComponent } from './components/map-connection-tips-destination/map-connection-tips-destination.component';
+import { PlacesListEditorComponent } from './components/places-list-editor/places-list-editor.component';
 
 // Router
 const routes: Routes = [
@@ -104,6 +108,10 @@ const routes: Routes = [
     AllUsersComponent,
     SignleUserComponent,
     FooterComponent,
+    MapAllConnectionsComponent,
+    MapAllMyTipsComponent,
+    MapConnectionTipsDestinationComponent,
+    PlacesListEditorComponent,
   ],
   imports: [
     BrowserModule,

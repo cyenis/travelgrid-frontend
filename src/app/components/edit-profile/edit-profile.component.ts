@@ -14,37 +14,55 @@ import { FileUploader } from "ng2-file-upload";
   styleUrls: ['./edit-profile.component.css']
 })
 export class EditProfileComponent {
-    error: string;
-    baseUrl = "http://localhost:3000";
-    feedbackEnabled = false;
-    processing = false;
+  error: string;
+  baseUrl = "http://localhost:3000";
+  feedbackEnabled = false;
+  processing = false;
 
-    user = this.auth.getUser();
-    
-    uploader: FileUploader = new FileUploader({
-      url: `${this.baseUrl}/auth/upload`
-    });
+  user = this.auth.getUser();
+  
+  uploader: FileUploader = new FileUploader({
+    url: `${this.baseUrl}/auth/upload`
+  });
 
-    constructor(
-      private auth: AuthService,
-      private router: Router
-    ) { }
+  constructor(
+    private auth: AuthService,
+    private router: Router
+  ) { }
 
-   
-    updateUser() {
-      this.error = null;
-      this.processing = true;
+  private postUpdateUser() {
+    this.auth.updateUser(this.user).subscribe(
+      () => this.router.navigate(['/profile']),
+      (err) => this.error = err
+    );
+  }
+
+  handleCityFromChange(informationArray) {
+    // this.user.cityFrom.title = informationArray[0];
+    // this.user.cityFrom.location = {
+    //   type: 'Point',
+    //   coordinates: [informationArray[1].lat(), informationArray[1].lng()]
+    // };
+  }
+
+
+  updateUser(form) {
+    this.error = null;
+    this.feedbackEnabled = true;
+    if (!form.valid) {
+      return;
+    }
+    this.processing = true;
+    if (this.uploader.queue.length) {
       this.uploader.uploadAll();
       this.uploader.onCompleteItem = (item: any, response: string) => {
         const fileData = JSON.parse(response);
         this.user.picture = fileData.filename;
-      this.auth.updateUser(this.user).subscribe(
-        () => this.router.navigate(['/profile']),
-        (err) => this.error = err
-      );
+        this.postUpdateUser();
+      } 
     }
-
-  
+    else {
+      this.postUpdateUser();
+    }
   }
-
 }

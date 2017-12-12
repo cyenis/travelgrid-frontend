@@ -1,0 +1,37 @@
+<p>
+  map-all-connections works!
+</p>
+
+<div *ngIf="users">
+    
+{{users[1].username}}
+
+
+
+    <p>Where do your connections live</p>
+    <input placeholder="Look for connections near..." autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+    
+    <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+
+        <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>     
+
+
+        <!-- <div *ngIf="tips">
+            <div *ngFor="let users of users">
+
+                <agm-marker [latitude]="{{users.livingIn.latitude}}" [longitude]="{{users.livingIn.longitude}}"></agm-marker>     
+                
+
+            </div>
+            </div> -->
+
+        
+      </agm-map>
+
+
+
+
+
+    </div>
+ 
+    
