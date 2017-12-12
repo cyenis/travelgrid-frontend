@@ -32,15 +32,6 @@ export class UserService {
       .map((res: Response) => res.json());
   }
 
-  // getLoggedInUser(): Observable<any> {
-  //   const options = new RequestOptions();
-  //   options.withCredentials = true;
-  //   return this.http
-  //     .get(baseUrl + "/auth/me", options)
-  //     .map((res: Response) => res.json());
-  // }
-
-
   // FriendRequest(userid, message): Observable<any> {
   //   const options = new RequestOptions();
   //   options.withCredentials = true;

@@ -64,7 +64,7 @@ const routes: Routes = [
   { path: 'auth/login', canActivate: [RequireAnonGuard], component: LoginPageComponent },
   { path: 'auth/signup', canActivate: [RequireAnonGuard], component: SignupPageComponent },
   { path: 'profile', canActivate: [RequireAuthGuard], component: ProfilePageComponent },
-  { path: 'profile/edit', canActivate: [RequireAuthGuard], component: ProfilePageComponent },
+  { path: 'profile/edit', canActivate: [RequireAuthGuard], component: EditProfileComponent },
   { path: 'connections', canActivate: [RequireAuthGuard], component: ConnectionListComponent },
   { path: 'connections/:id', canActivate: [RequireAuthGuard], component: SingleConnectionComponent },
   { path: 'posts', canActivate: [RequireAuthGuard], component: PostListComponent },
