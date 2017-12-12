@@ -13,9 +13,9 @@ li {
   }
   
   .splash-overlay {
-    background: #0FBABA;  /
-    background: -webkit-linear-gradient(to right, #223766, rgba(161, 255, 206, 0.6));
-    background: linear-gradient(to right, rgba(250, 255, 209, 0.1), rgba(161, 255, 206, 0.6));
+    background: #0FBABA;  
+    background: -webkit-linear-gradient(to right, rgba(34, 55, 102, 0.3), rgba(15, 186, 186, 0.3));
+    background: linear-gradient(to right, rgba(34, 55, 102, 0.3), rgba(15, 186, 186, 0.3));
     height: 300px;
     text-align: center;
     display: flex;
@@ -120,6 +120,18 @@ li {
     background-position: center;
     background-size: cover;
     margin-top: 50px;
+  }
+
+  .bottom-overlay {
+    background: #0FBABA;  
+    background: -webkit-linear-gradient(to right, rgba(34, 55, 102, 0.3), rgba(15, 186, 186, 0.3));
+    background: linear-gradient(to right, rgba(34, 55, 102, 0.3), rgba(15, 186, 186, 0.3));
+    height: 350px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
   }
   
 

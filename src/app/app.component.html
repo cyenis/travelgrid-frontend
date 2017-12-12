@@ -1,37 +1,17 @@
 <div class="page-wrap">
     
-<header class="site-header">
-    <!-- <div [ngClass]="{'is-user': user, 'is-anon': anon}">
-      <div *ngIf="loading">
-        <span class="username text">loading...</span>
-      </div>
-      <div *ngIf="!loading && !!user">
-        <a (click)="profile()">{{user.username}}'s Profile</a>
-        <a href='/connections'>Connections</a>
-        <a href='/tips'>Tips</a>        
-        <a (click)="logout()">logout</a>
-      </div>
-      <div *ngIf="!loading && anon">
-        <a (click)="login()">login</a>
-        <a (click)="signup()">signup</a>
-      </div>
-    </div>  <hr/> -->
-  </header>
-
   <app-header ></app-header>
-  
-
   
   <router-outlet></router-outlet>
 
-
+  <app-footer ></app-footer>
   
   <footer class="site-footer">
   <div class="footer-logo">
     <div class="img-container">
-      <img class="footer-img" src="https://www.shareicon.net/download/2016/12/30/866944_backpack_512x512.png">
+      <img class="footer-img" src="https://image.flaticon.com/icons/png/128/201/201623.png">
     </div>
-    <p>travelgrid</p>
+    <p>travelgrid</p>  
   </div>
   <hr>
   <!-- <p>Designed by Constantinos Yenis</p> -->

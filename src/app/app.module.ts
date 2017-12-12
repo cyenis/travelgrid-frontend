@@ -55,6 +55,7 @@ import { MapAutocompletePlacesComponent } from './components/map-autocomplete-pl
 import { MapAutocompleteCitiesComponent } from './components/map-autocomplete-cities/map-autocomplete-cities.component';
 import { AllUsersComponent } from './pages/all-users/all-users.component';
 import { SignleUserComponent } from './pages/signle-user/signle-user.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 // Router
 const routes: Routes = [
@@ -102,6 +103,7 @@ const routes: Routes = [
     MapAutocompleteCitiesComponent,
     AllUsersComponent,
     SignleUserComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

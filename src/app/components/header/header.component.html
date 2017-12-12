@@ -7,7 +7,7 @@
     
         <a [routerLink]="['/']">
           <div class="logo">
-            <img class="logo-img" src="https://www.shareicon.net/download/2016/12/30/866944_backpack_512x512.png">
+            <img class="logo-img" src="https://image.flaticon.com/icons/png/128/201/201623.png">
             <h1>travelgrid</h1>
           </div>
         </a>
@@ -41,13 +41,30 @@
         </a>
 
         
-    
         <a class="burger-auth-link" *ngIf="!user" [routerLink]="['/auth/signup']" (click)="toggleMenu()">
           <li class="bottom-nav-item">
             <p>Sign up</p>
           </li>
         </a>
     
+    
+        <a class="burger-auth-link" *ngIf="user" [routerLink]="['/profile']" (click)="toggleMenu()">
+          <li class="bottom-nav-item">
+            <p>My Profile</p>
+          </li>
+        </a>
+
+        <a class="burger-auth-link" *ngIf="user" (click)="logout()" >
+          <li class="bottom-nav-item">
+            <p>Logout</p>
+          </li>
+        </a>
+
+
+
+
+
+
         <a [routerLink]="['/destination']" (click)="toggleMenu()">
           <li class="bottom-nav-item">
             <p>Plan a trip</p>
@@ -60,17 +77,15 @@
           </li>
         </a>
     
-        <a *ngIf="user" [routerLink]="['/profile']" (click)="toggleMenu()">
-          <li class="bottom-nav-item">
-            <p>My Profile</p>
-          </li>
-        </a>
-
-
-
         <a *ngIf="user" [routerLink]="['/connections']" (click)="toggleMenu()">
           <li class="bottom-nav-item">
             <p>Connections</p>
+          </li>
+        </a>
+
+        <a *ngIf="user" [routerLink]="['/users']" (click)="toggleMenu()">
+          <li class="bottom-nav-item">
+            <p>All Users</p>
           </li>
         </a>
     
