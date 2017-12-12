@@ -23,7 +23,9 @@
           <div class="auth-top-header">
             <a *ngIf="!user" [routerLink]="['/auth/login']"><p>Login</p></a>
             <a *ngIf="!user" [routerLink]="['/auth/signup']"><p>Signup</p></a>
-            <a *ngIf="user" [routerLink]="['/profile']"><p>My Profile</p></a>
+            <a *ngIf="user" [routerLink]="['/profile']"><p>
+                <img src="http://localhost:3000{{ user.picture }} " alt="Profile Picture" class="profile-picture"> 
+              {{user.firstName}} </p></a>
             <a *ngIf="user" (click)="logout()"><p>Logout</p></a>
           </div>
     

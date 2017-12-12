@@ -84,6 +84,13 @@
     cursor: pointer;
   }
   
+
+  .profile-picture{
+   
+    border-radius: 90%;
+    
+}
+
   .logo {
     letter-spacing: 3px;
     color: #2d2d2d;
@@ -187,3 +194,4 @@
       width: 50%;
     }
   }
+
