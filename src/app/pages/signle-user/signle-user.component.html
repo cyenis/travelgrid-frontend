@@ -3,17 +3,19 @@
 
 Another Users Profile
 
-<!-- <h1>{{ user.firstName }} profile</h1> -->
+<div *ngIf='user'>
+        
+<h1>{{ user.firstName }} profile</h1>
 
-<!-- <h3 class="site-title"><a [routerLink]="['/profile/edit']">Connect</a></h3> -->
+<h3 class="site-title"><a [routerLink]="['/profile/edit']">Connect</a></h3>
 
-<!-- <img src="{{ user.picture }} " alt="Profile Picture" class="profile-picture"> -->
-
-
+<img src="http://localhost:3000{{ user.picture }} " alt="Profile Picture" class="profile-picture">
 
 
 
-<!-- <p> You are logged in as {{ user.username }}  </p>
+
+
+<p> You are logged in as {{ user.username }}  </p>
 
 <p> Your email is {{ user.email }}  </p>
 
@@ -21,4 +23,6 @@ Another Users Profile
 
 <p> Your last name is {{ user.lastName }}  </p>
 
-<p> Your ID is {{ user.id }}  </p> -->
+<p> Your ID is {{ user.id }}  </p>
+
+</div>

@@ -39,6 +39,7 @@ export class ProfilePageComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
+    this.authService.me();
     this.user = this.authService.getUser();
     this.uploader.onSuccessItem = (item, response) => {
       this.feedback = JSON.parse(response).message;
@@ -47,29 +48,6 @@ export class ProfilePageComponent implements OnInit {
       this.feedback = JSON.parse(response).message;
     };
 
-// // Save uploaded photo
-// private submit() {
-//   this.saving = true;
-//   this.auth.updateUser(this.editUser).subscribe(() => {
-//     this.saving = false;
-//   })
-// }
-
-// // Handle the updated photo form
-// handleUpdateUserForm(myForm) {
-//   const files = this.uploader.getNotUploadedItems();
-//   if (files.length) {
-//     this.uploader.uploadAll();
-//     this.uploader.onCompleteItem = (item, response) => {
-//       let data = JSON.parse(response);
-//       this.editUser.pic_path = data.userFileName;
-//       this.submit();
-//     };
-//   }
-//   else {
-//     this.submit();
-//   }
-
-}
+ }
 
 }

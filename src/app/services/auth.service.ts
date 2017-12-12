@@ -80,6 +80,7 @@ export class AuthService {
       });
   }
 
+
   updateUser(user) {
     const options = new RequestOptions();
     options.withCredentials = true;

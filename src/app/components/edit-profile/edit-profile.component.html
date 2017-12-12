@@ -1,5 +1,30 @@
+
+
+<div class="container">
+  
+
+
+<h1>Edit {{ user.firstName }} profile</h1>
+
+<h3 class="site-title"><a [routerLink]="['/profile']">Back to profile</a></h3>
+
+<img src="http://localhost:3000{{ user.picture }} " alt="Profile Picture" class="profile-picture">
+
+
+
+
+
+
+
 <form [ngClass]="{'has-error': error}" novalidate >
-   
+  <div class="field" [ngClass]="{'has-error': error}">
+    <label>Change profile photo</label>
+    <input type="file" name="file" [disabled]="processing" ng2FileSelect [uploader]="uploader" />
+  </div>
+
+
+<br>
+
     <div class="form-group field" [ngClass]="{'has-error': error}">
       <label>Email</label>
       <input type="email" [(ngModel)]="user.email" name="email" required/>
@@ -13,11 +38,30 @@
           <input type="text" [(ngModel)]="user.lastName" name="lastName" required/>
         </div>
   
+        <div class="field">
+          <label>City From</label>
+          <app-map-autocomplete-cities ></app-map-autocomplete-cities>
+        </div>
+
+        <div class="field">
+          <label>City Living now</label>
+          <app-map-autocomplete-cities></app-map-autocomplete-cities>
+        </div>
   
+        <div class="field">
+          <label>Places lived</label>
+          <app-map-autocomplete-cities></app-map-autocomplete-cities>
+        </div>
   
-  
+
+
+        
+  <br>
     <div class="form-group actions">
-      <button (click)="updateUser()">Update</button>
+      <button (click)="updateUser()"[disabled]="processing">Update Profile</button>
       <p *ngIf="error" class="error">{{error}}</p>
     </div>
   </form>
+
+
+</div>

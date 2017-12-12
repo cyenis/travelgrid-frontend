@@ -1,3 +1,6 @@
+<div class="container">
+  
+
 <form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" novalidate>
   
     <div class="field" [ngClass]="{'has-error': feedbackEnabled && myTitle.errors}">
@@ -30,15 +33,11 @@
       <div class="field" [ngClass]="{'has-error': feedbackEnabled && myLocation.errors}">
       <label for="postStatus">Public or Private:</label>
       <select name="postStatus" [(ngModel)]="tip.postStatus" #myStatus="ngModel" [disabled]="processing">
-          <option value="publicPost">Public</option>
+          <option value="publicPost" selected>Public</option>
           <option value="privatePost">Private</option>
       </select>
     </div>
     
-
-
-
-
 
     <div class="field" [ngClass]="{'has-error': feedbackEnabled && myDestination.errors}">
       <label>Destination</label>
@@ -85,4 +84,4 @@
     </div>
   </form>
   
-  
+</div>
