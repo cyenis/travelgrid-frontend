@@ -14,13 +14,39 @@
           </div>
         </ul>
       
-      <br>
       
-        <app-map-all-connections></app-map-all-connections>
+        <app-map-all-connections [users]="users"></app-map-all-connections>
         
 
+        <div class="result-button-container" *ngIf='users'>
+            <button (click)="showResults($event)"> Connection </button>
+            <!-- <span >{{users.length}}</span> -->
+          </div>
+          <div class="results" >
+            <mat-tab-group mat-stretch-tabs="yes">
+              <mat-tab label="Map"  (click)="activateMap()">
+                  <!-- <app-map-users [users]="users" ></app-map-users> -->
+              </mat-tab>
+              
+              <mat-tab  label="List" >
+                <!-- <app-spot-list [users]="users" class="spot-list"></app-spot-list> -->
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+            <!-- <app-filter [users]="users" [selectors]="selectors" *ngIf="filterReady" (onChange)="handleFilterChange($event)" [ngClass]="filterVisible ? 'filter-visible' : 'filter-hidden'"></app-filter> -->
+          <hr>
 
 
 
 
-      </div>
+
+
+
+
+
+</div>
+
+
+
+
+    

@@ -166,3 +166,11 @@ body {
   .travel-icon{
   width: 44px;
   }
+
+  .travel-icon-menu{
+    width: 44px;
+    }
+
+    menu-itemss{
+      display: inline-block;
+    }

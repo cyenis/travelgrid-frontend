@@ -1,6 +1,9 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
+import { MatTabGroup } from '@angular/material';
+import { MatTab } from '@angular/material';
+
 import { TipService } from "../../services/tip.service";
 import { UserService } from '../../services/user.service';
 import { ActivatedRoute } from "@angular/router";
@@ -25,6 +28,38 @@ export class ConnectionListComponent implements OnInit {
       console.log(this.users);
     });
   }
+
+
+  // handleFilterChange(result) {
+  //   this.users = result;
+  // }
+
+  showResults(event) {
+    if (1) {
+      // this.resultVisible = false;
+      // this.filterVisible = true;
+      event.srcElement.innerHTML = `Show results: `;
+    } 
+    // else {
+    //   this.resultVisible = true;
+    //   // this.filterVisible = false;
+    //   event.srcElement.innerHTML = 'Edit filters';
+    // }
+  }
+
+  activateMap() {
+    // this.mapActive = true;
+    // console.log(this.mapActive);
+
+  }
+
+
+
+
+
+
+
+
 
 }
 

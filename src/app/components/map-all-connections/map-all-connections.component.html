@@ -11,32 +11,35 @@
 
 
 <p>Where do your connections live</p>
-<input placeholder="Look for connections near..." autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
 
 
 <agm-map  *ngIf="users" [latitude]="latitude" [longitude]="longitude" [scrollwheel]="true" [zoom]="zoom" [styles]='customStyle'>
-        <!-- <agm-marker 
+        <agm-marker 
         *ngFor="let users of users;"
-        [latitude]="users.livingIn.location.latitude" 
-        [longitude]="users.livingIn.location.longitude" >
+        [latitude]="users.cityFrom.location.latitude" 
+        [longitude]="users.cityFrom.location.longitude"
+        [iconUrl]="customIcon"> 
+        >
     
-          <agm-info-window > -->
-            <!-- <h3 [routerLink]="['/users', user.id]">{{users.username}}</h3> -->
-          <!-- </agm-info-window>
+          <agm-info-window >
+            <h3 [routerLink]="['/users',users._id]">{{users.username}}</h3>
+          </agm-info-window>
     
     </agm-marker>
     <agm-marker [latitude]="latitude" [longitude]="longitude">
             <agm-info-window >
 
 </agm-info-window>
-</agm-marker>      -->
+</agm-marker>     
     
-    <agm-marker [latitude]="42.5" [longitude]="2.4"></agm-marker>     
-    <agm-marker [latitude]="45.5" [longitude]="3.4"></agm-marker>     
-    <agm-marker [latitude]="42.32" [longitude]="2.3"></agm-marker>     
-    <agm-marker [latitude]="32.5" [longitude]="9.4"></agm-marker>     
-    <agm-marker [latitude]="62.32" [longitude]="3.3"></agm-marker>     
-    <agm-marker [latitude]="9.0" [longitude]="5.0"></agm-marker>     
+    <agm-marker [latitude]="42.5" [longitude]="2.4" [iconUrl]="customIcon" ></agm-marker>     
+    <agm-marker [latitude]="45.5" [longitude]="3.4"         [iconUrl]="customIcon"> 
+        ></agm-marker>     
+    <agm-marker [latitude]="42.32" [longitude]="2.3" [iconUrl]="customIcon"></agm-marker>     
+    <agm-marker [latitude]="32.5" [longitude]="9.4" [iconUrl]="customIcon"></agm-marker>     
+    <agm-marker [latitude]="62.32" [longitude]="3.3" [iconUrl]="customIcon"></agm-marker>     
+    <agm-marker [latitude]="9.0" [longitude]="5.0"         [iconUrl]="customIcon"> 
+        ></agm-marker>     
     
     
       </agm-map>

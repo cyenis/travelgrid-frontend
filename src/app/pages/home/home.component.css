@@ -5,12 +5,14 @@ li {
   }
   
   .splash-image {
-    background-image: url(http://news.umanitoba.ca/wp-content/uploads/2013/09/earth.jpg);
+    background-image: url(https://rv6uqq-db3pap001.files.1drv.com/y4mboCZjWb3b2JCrQPTmy1AMkHHmL7Cy31GRwCejUfCTjovQfisWatBIqpY5d1OE1TkfcsAJjhafUo5tFapn8qrvAkRUrEwl_nKqIsNM8B8hlf_qUXDn2Hb_-5GvIpij3dd7jVSRoFR7nqbOepwLAge-4-mTtcNq9_gS-SRLV2d9_AUb91PRHLJWGdnQlcY9l6MuFpJWGkq_-WqWaRiontYGA?width=3177);
     height: 300px;
     background-repeat: no-repeat;
     background-position: 60% 90%;
     background-size: cover;
   }
+
+
   
   .splash-overlay {
     background: #0FBABA;  

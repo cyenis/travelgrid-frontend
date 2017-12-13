@@ -8,7 +8,7 @@
         <a [routerLink]="['/']">
           <div class="logo">
             <img class="logo-img" src="https://image.flaticon.com/icons/png/128/201/201623.png">
-            <h1>travelgrid</h1>
+            <h1>tips4trips</h1>
           </div>
         </a>
     
@@ -32,13 +32,17 @@
         </div>
       </div>
     
+
+
+
+
       <nav class="bottom-nav" [ngClass]="{'visible': toggle}">
         <div class="container">
         <ul>
     
         <a class="burger-auth-link" *ngIf="!user" [routerLink]="['/auth/login']" (click)="toggleMenu()">
           <li class="bottom-nav-item">
-            <p>Login</p>
+             <p>Login</p>
           </li>
         </a>
 
@@ -52,7 +56,7 @@
     
         <a class="burger-auth-link" *ngIf="user" [routerLink]="['/profile']" (click)="toggleMenu()">
           <li class="bottom-nav-item">
-            <p>My Profile</p>
+             <div class="menu-itemss"> <img class="travel-icon-menu" src="../assets/icons/profile.svg">My Profile  </div> 
           </li>
         </a>
 
@@ -69,7 +73,7 @@
 
         <a [routerLink]="['/destination']" (click)="toggleMenu()">
           <li class="bottom-nav-item">
-            <p>Plan a trip</p>
+              <img class="travel-icon" src="../assets/icons/trips.svg"> Plan a trip
           </li>
         </a>
     
@@ -98,9 +102,10 @@
             <p>Add a tip</p>
           </li>
         </a>
-    
       </ul>
+
         </div>
+
       </nav>
     
     </header>

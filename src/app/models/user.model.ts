@@ -9,8 +9,8 @@ export class User {
     livingIn:
     {
      location: {
-       latitude: String,
-       longitude: String
+       latitude: Number,
+       longitude: Number
      },
      placeName: {
      type: String,
@@ -22,8 +22,8 @@ export class User {
    cityFrom:
    {
     location: {
-      latitude: String,
-      longitude: String
+      latitude: Number,
+      longitude: Number
     },
     placeName: {
     type: String,

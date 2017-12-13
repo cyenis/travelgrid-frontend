@@ -6,10 +6,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 
-//City autocomplete
+
+// Material elements
+import { MatTab, MatTabsModule } from '@angular/material';
+import { MatTabGroup } from '@angular/material';
+import { MatMenuModule } from '@angular/material/menu';
+
+// City autocomplete
 import { Ng4GeoautocompleteModule } from 'ng4-geoautocomplete';
 
-//With maps
+// With maps
 import { AgmCoreModule } from '@agm/core';
 
 
@@ -123,6 +129,8 @@ const routes: Routes = [
       libraries: ["places"]
     }),
     ReactiveFormsModule,
+    MatTabsModule,
+    MatMenuModule,
     HttpModule,
     RouterModule.forRoot(routes),
     FileUploadModule

@@ -31,6 +31,12 @@
       <div class="validation-error" *ngIf="lastNameField.invalid && feedbackEnabled">Last name is required</div>      
     </div>
 
+    <div class="form-group field" [ngClass]="{'has-error': lastNameField.invalid && feedbackEnabled}">
+        <label>Birthday</label>
+        <input type="date" [(ngModel)]="user.lastName" name="lastName" #lastNameField="ngModel" required/>
+        <div class="validation-error" *ngIf="lastNameField.invalid && feedbackEnabled">Last name is required</div>      
+      </div>
+
     <div class="field">
       <label>City From</label>
       <app-map-autocomplete-cities (onSelect)="handleCityFromChange($event)"></app-map-autocomplete-cities>
