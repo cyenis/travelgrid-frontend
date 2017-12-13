@@ -38,7 +38,7 @@
 
     <div class="field">
       <label>City Living now</label>
-      <app-map-autocomplete-cities></app-map-autocomplete-cities>
+      <app-map-autocomplete-cities (onSelect)="handleCityLivingIn($event)"></app-map-autocomplete-cities>
     </div>
 
     <div class="form-group actions">

@@ -15,14 +15,16 @@ Another Users Profile
 
 
 
-<p> You are logged in as {{ user.username }}  </p>
+<p> {{ user.username }}  </p>
 
-<p> Your email is {{ user.email }}  </p>
+<p> Emai: {{ user.email }}  </p>
 
-<p> Your first name is {{ user.firstName }}  </p>
+<p> First name: {{ user.firstName }}  </p>
 
-<p> Your last name is {{ user.lastName }}  </p>
+<p> Last name: {{ user.lastName }}  </p>
 
-<p> Your ID is {{ user.id }}  </p>
+<p> Lives in: {{ user.livingIn.placeName }}  </p>
+
+<p> Born in: {{ user.cityFrom.placeName }}  </p>
 
 </div>

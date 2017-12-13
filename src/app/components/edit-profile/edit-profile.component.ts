@@ -37,12 +37,21 @@ export class EditProfileComponent {
     );
   }
 
+  handleCityLivingIn(informationArray) {
+    console.log(informationArray);    
+    this.user.livingIn.placeName = informationArray[0];
+    this.user.livingIn.location.latitude = informationArray[1].lat();
+    this.user.livingIn.location.longitude = informationArray[1].lng();
+    this.user.livingIn.link = informationArray[2];
+  }
+
+
   handleCityFromChange(informationArray) {
-    // this.user.cityFrom.title = informationArray[0];
-    // this.user.cityFrom.location = {
-    //   type: 'Point',
-    //   coordinates: [informationArray[1].lat(), informationArray[1].lng()]
-    // };
+    console.log(informationArray);    
+    this.user.cityFrom.placeName = informationArray[0];
+    this.user.cityFrom.location.latitude = informationArray[1].lat();
+    this.user.cityFrom.location.longitude = informationArray[1].lng();
+    this.user.cityFrom.link = informationArray[2];
   }
 
 

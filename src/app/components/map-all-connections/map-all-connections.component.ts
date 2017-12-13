@@ -52,7 +52,6 @@ export class MapAllConnectionsComponent implements OnInit {
     this.users = data;
     console.log('This is the map talking!' , this.users);
   });
-  
     // set google maps defaults
     this.zoom = 4;
     this.latitude = 41.397852;
