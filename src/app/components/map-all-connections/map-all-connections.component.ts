@@ -1,4 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, ElementRef, NgModule, NgZone, OnInit, ViewChild, Output, EventEmitter, Input } from '@angular/core';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { AgmCoreModule, MapsAPILoader } from '@agm/core';
+import {} from '@types/googlemaps';
 
 import { User } from '../../models/user.model';
 
@@ -14,10 +18,9 @@ export class MapAllConnectionsComponent implements OnInit {
   
 
   
- 
-  lat = 41.397859;
-  long = 2.181381;
-  zoom = 4;
+  public latitude: number;
+  public longitude: number;
+  public zoom: number;
 
   public customStyle = [
     {
@@ -183,9 +186,28 @@ export class MapAllConnectionsComponent implements OnInit {
 
   public customIcon = 'https://png.icons8.com/street-view/dusk/50/000000';
 
-  constructor() { }
+  constructor(
+    private mapsAPILoader: MapsAPILoader,
+    private ngZone: NgZone
+  ) {}
 
   ngOnInit() {
-  }
+ // set google maps defaults
+ this.zoom = 2;
+ this.latitude = 41.397852;
+ this.longitude = 2.164561;
 
+// set current position
+this.setCurrentPosition();
+
+  }
+  private setCurrentPosition() {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.latitude = position.coords.latitude;
+        this.longitude = position.coords.longitude;
+        this.zoom = 3;
+      });
+    }
+  }
 }

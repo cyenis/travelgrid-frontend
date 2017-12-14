@@ -15,7 +15,8 @@
 
 <agm-map  *ngIf="users" [latitude]="latitude" [longitude]="longitude" [scrollwheel]="true" [zoom]="zoom" [styles]='customStyle'>
         
-  <agm-marker [latitude]="42.1" [longitude]="2.3">
+  <agm-marker [latitude]="latitude" [longitude]="longitude"         [iconUrl]="customIcon"> 
+      >
 
     <agm-info-window >   My location         </agm-info-window>
   </agm-marker>     
@@ -36,7 +37,7 @@
     
           <agm-polyline [editable]="false">
               
-                <agm-polyline-point [latitude]="42.1" [longitude]="2.3">
+                <agm-polyline-point [latitude]="latitude" [longitude]="longitude">
               
                 </agm-polyline-point >
               

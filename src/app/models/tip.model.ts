@@ -5,7 +5,7 @@ export class Tip {
     postStatus: string;
     picture: string;
     location: Object;
-    destination: string;
+    city: string;
     user_id: string;
 
     constructor(obj: Object = {}) {

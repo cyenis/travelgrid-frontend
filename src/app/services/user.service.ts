@@ -32,6 +32,16 @@ export class UserService {
       .map((res: Response) => res.json());
   }
 
+
+  getCityUsers(city: string) {
+    let options = new RequestOptions();
+    options.withCredentials = true;
+    return this.http.get(apiUrl + `/city/${city}`, options)
+    .map((res: Response) => res.json());
+  }
+
+
+
   // getLoggedInUser(): Observable<any> {
   //   const options = new RequestOptions();
   //   options.withCredentials = true;

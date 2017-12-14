@@ -42,12 +42,12 @@
       
     
 
-    <div class="field" [ngClass]="{'has-error': feedbackEnabled && myDestination.errors}">
-      <label>Destination</label>
-      <input type="text" name="destination" [(ngModel)]="tip.destination" #myDestination="ngModel" [disabled]="processing" min="0" required/>
+    <div class="field" [ngClass]="{'has-error': feedbackEnabled && myCity.errors}">
+      <label>City</label>
+      <input type="text" name="city" [(ngModel)]="tip.city" #myCity="ngModel" [disabled]="processing" min="0" required/>
   
-      <!-- <div *ngIf="feedbackEnabled && myDestination.errors">
-        <p *ngIf="myDestination.errors.required" class="validation">Where?</p>
+      <!-- <div *ngIf="feedbackEnabled && myCity.errors">
+        <p *ngIf="myCity.errors.required" class="validation">Where?</p>
       </div> -->
     </div>
 

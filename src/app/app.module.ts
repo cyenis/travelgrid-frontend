@@ -34,6 +34,8 @@ import { RequestUser } from './guards/request-user.guard';
 import { AuthService } from './services/auth.service';
 import { TipService } from './services/tip.service';
 import { UserService } from './services/user.service';
+import { CityService } from './services/city.service';
+import { CityTrailService } from './services/city-trail.service';
 
 
 // Pages
@@ -66,6 +68,8 @@ import { MapAllConnectionsComponent } from './components/map-all-connections/map
 import { MapAllMyTipsComponent } from './components/map-all-my-tips/map-all-my-tips.component';
 import { MapConnectionTipsDestinationComponent } from './components/map-connection-tips-destination/map-connection-tips-destination.component';
 import { PlacesListEditorComponent } from './components/places-list-editor/places-list-editor.component';
+import { TipCardComponent } from './components/tip-card/tip-card.component';
+import { UserCardComponent } from './components/user-card/user-card.component';
 
 // Router
 const routes: Routes = [
@@ -118,6 +122,8 @@ const routes: Routes = [
     MapAllMyTipsComponent,
     MapConnectionTipsDestinationComponent,
     PlacesListEditorComponent,
+    TipCardComponent,
+    UserCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -139,6 +145,8 @@ const routes: Routes = [
     AuthService,
     TipService,
     UserService,
+    CityTrailService,
+    CityService,
     RequireAuthGuard,
     RequireAnonGuard,
   ],

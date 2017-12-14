@@ -1,0 +1,53 @@
+<p>
+  tip-card works!
+</p>
+
+
+<div class="question-container" >
+    
+      <!-- Tip info -->
+      <div class="left-align-text">
+        <p>City: {{tip && tip.city}}</p>
+        <p>{{tip && tip.date | date:'short'}}</p>
+      </div>
+      <hr />
+      <div *ngIf="tip.user_id" class="card-img-container" [ngStyle]="{'background-image': 'url(' + picUrl + tip.user_id.pic_path + ')'}">
+      </div>
+      <div *ngIf="!tip.user_id" class="card-img-container" [ngStyle]="{'background-image': 'url(' + picUrl + '/images/profile-default.jpg)'}">
+      </div>
+      <p *ngIf="tip.user_id" class="username-text">Posted by: {{tip.user_id && tip.user_id.username}}</p>
+      <p *ngIf="!tip.user_id" class="username-text">Asked by: Anonymous</p>
+      <h3>{{tip && tip.content}}</h3>
+    
+      <!-- Add comment -->
+      <!-- <form (ngSubmit)="submitAnswerForm(myForm)" #myForm="ngForm" novalidate>
+        <div class="input-wrapper">
+          <input type="text" name="answer" #myContent="ngModel" [(ngModel)]="newAnswer.content" placeholder="Enter answer here..." minlength="6" required/>
+          <p class="validation" *ngIf="submitted && myContent.invalid && myContent.errors.required">Please enter some content</p>
+          <p class="validation" *ngIf="submitted && myContent.invalid && myContent.errors.minlength">Answer must be at least 6 characters</p>
+        </div>
+        <button class="submit-button" type="submit">Submit Answer</button>
+      </form> -->
+    
+      <!-- Tip stars -->
+      <!-- <div class="star-container-question" matTooltip="Star this question!" matTooltipPosition="above">
+        <i class="fa fa-star-o" aria-hidden="true" [ngClass]="{'hidden' : voted}" (click)="handleAddQuestionStar(question._id)"></i>
+        <i class="fa fa-star" aria-hidden="true" [ngClass]="{'hidden' : !voted}"></i>
+        <p>{{question.stars}}</p>
+      </div> -->
+    
+    
+      <!-- View comments -->
+      <!-- <button (click)="toggleAnswerList()">View Answers ({{question.answers.length}})</button>
+      <div class="answer-container" [ngClass]="{'visible': visibleAnswers}">
+        <div class="answers" *ngFor="let answer of question.answers">
+          <div class="star-container-answer" matTooltip="Star this answer!" matTooltipPosition="above" (click)="handleAddAnswerStar(question._id, answer._id)">
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            <p>{{answer.stars}}</p>
+          </div>
+          <p class="answer-text">{{answer.content}}</p>
+          <hr />
+        </div>
+      </div> -->
+    
+    </div>

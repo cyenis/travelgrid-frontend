@@ -42,4 +42,30 @@ export class TipService {
       .map((res: Response) => res.json());
   }
 
+
+  getCityTips(city: string) {
+    let options = new RequestOptions();
+    options.withCredentials = true;
+    return this.http.get(apiUrl + `/citytips/${city}`, options)
+      .map((res) => res.json());
+  }
+
+  getUserTips(userId: string) {
+    let options = new RequestOptions();
+    options.withCredentials = true;
+    return this.http.get(apiUrl + `/usertips/${userId}`, options)
+      .map((res) => res.json());
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 }

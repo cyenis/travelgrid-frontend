@@ -28,7 +28,7 @@ export class AddTipComponent implements OnInit {
     location: null,
     links: null,
     postStatus: null,
-    destination: null
+    city: null
   };
   // author = loggedin user;
   uploader: FileUploader = new FileUploader({

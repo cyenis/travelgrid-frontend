@@ -1,11 +1,65 @@
+<div class="city-image" [ngStyle]="{'background-image': 'url(' + photoURL + ')'}" >
+        <div class="city-header">
+          <h2>{{city}}</h2>
+          <h3>{{country}}</h3>
+        </div>
+      </div>
+
+
 <div class="container">
     
+<br>
+
+
+<div class="tips-box">
+        <div class="container">
+            <h2>Users living in {{city}}</h2>
+            <ul class="user-container">
+            <li *ngFor="let user of userList">
+                    <a [routerLink]="['/users',user._id]">                         
+              <app-user-card [user]="user"></app-user-card>
+             </a>
+            </li>
+            </ul>
+            <!-- <div class="view-all" [routerLink]="['/tips']">
+            <p>View All </p>
+            </div> -->
+        </div>
+</div>
+
+
+
+
+<div class="tips-box">
+        <div class="container">
+            <h2>Tips for {{city}}</h2>
+            <ul class="tip-container">
+            <li *ngFor="let tip of tipList">
+                    <a [routerLink]="['/tips',tip._id]">                         
+                <app-tip-card [tip]="tip"></app-tip-card>
+</a>
+            </li>
+            </ul>
+            <!-- <div class="view-all" [routerLink]="['/tips']">
+            <p>View All </p>
+            </div> -->
+        </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 <p>
   Destination-details needed here!
 </p>
-
-
-
 
 <br>
 
@@ -42,6 +96,22 @@ Friends living in this location:  </p>
                 <p> Tipsters in this location:
                   </p>
 
+
+
+
+<ul style="list-style: none">
+        <div *ngIf="users">
+          <li *ngFor="let users of users">
+              <a [routerLink]="['/users',users._id]">  
+          <p> Name: {{users.firstName}} {{users.lastName}} From: {{users.cityFrom.placeName}} </p>
+            <!-- <p><img src="http://localhost:3000{{users.picture}}" alt="User Photo" class='User-photo'> </p> -->
+          </a>
+          <!-- <p>{{tips.user_id.firstName}}</p> -->
+          
+          </li>
+        </div>
+      </ul>
+    
 
 
 

@@ -48,32 +48,33 @@
 
 .city-item-container {
   text-align: center;
-  width: 260px;
-  height: 200px;
-  margin: 20px;
+  width: 50%;
+  height: 40vh;
+  /* margin: 20px; */
   background-position: center;
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 20px;
+  /* border-radius: 20px; */
 }
 
 
 /* Text */
 .city-item-container a, .city-item-container h3 {
   line-height: 200px;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0,0,0,0.1);
   color: white;
   width: 100%;
+  height: 100%;
   font-weight: 400;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   transition: all 200ms ease;
 }
 
 
 .city-item-container a:hover, .city-item-container h3:hover {
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.2);
   font-size: 1.6rem;
   transition: all 200ms ease;
   cursor: pointer;
