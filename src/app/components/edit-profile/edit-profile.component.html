@@ -3,7 +3,7 @@
             
       <h3>Editing {{ user.firstName }} profile</h3>
       <h3 class="site-title"><a [routerLink]="['/profile']">Back to profile</a></h3>
-      <img src="http://localhost:3000{{ user.picture }} " alt="Profile Picture" class="profile-picture">
+      <img src="{{serverUrl}}{{ user.picture }} " alt="Profile Picture" class="profile-picture">
 
       <form [ngClass]="{'has-error': error}" #myForm="ngForm" novalidate >
 

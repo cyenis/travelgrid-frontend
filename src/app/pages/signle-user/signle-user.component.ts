@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { Router } from "@angular/router";
+
 import { UserService } from '../../services/user.service';
+import { environment } from '../../../environments/environment'
 
 @Component({
   selector: 'app-signle-user',
@@ -11,6 +13,7 @@ import { UserService } from '../../services/user.service';
 export class SignleUserComponent implements OnInit {
 
   user = null;
+  serverUrl = environment.apiUrl;
   
   constructor(
     private activatedRoute: ActivatedRoute,

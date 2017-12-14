@@ -8,7 +8,7 @@
     
             <div class="card-small-profile">
                 <a>
-                    <img src="http://localhost:3000{{tip.user_id.picture}}" alt="User Photo" class='user-tip-photo'>
+                    <img src="{{serverUrl}}{{tip.user_id.picture}}" alt="User Photo" class='user-tip-photo'>
                 </a>       
             </div>
            
@@ -24,7 +24,7 @@
             </div>
         </div>
     
-            <p><img src="http://localhost:3000{{tip.picture}}" alt="Tip Photo" class='tip-photo'> </p>
+            <p><img src="{{serverUrl}}{{tip.picture}}" alt="Tip Photo" class='tip-photo'> </p>
             
     
     <h2>{{tip.title}}</h2>

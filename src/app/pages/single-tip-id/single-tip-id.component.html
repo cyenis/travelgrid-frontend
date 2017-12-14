@@ -7,7 +7,7 @@
     <div class="profile-header">
         <div class="card-small-profile">
             <a>
-                <img src="http://localhost:3000{{tips.user_id.picture}}" alt="User Photo" class='user-tip-photo'>
+                <img src="{{serverUrl}}{{tips.user_id.picture}}" alt="User Photo" class='user-tip-photo'>
             </a>       
         </div>
         <div class="single-post-user-info">     
@@ -20,7 +20,7 @@
         </div>
     </div>
 
-        <p><img src="http://localhost:3000{{tips.picture}}" alt="Tip Photo" class='tip-photo'> </p>
+        <p><img src="{{serverUrl}}{{tips.picture}}" alt="Tip Photo" class='tip-photo'> </p>
         
 
 <h2>{{tips.title}}</h2>

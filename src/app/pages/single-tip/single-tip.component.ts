@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { TipService } from "../../services/tip.service";
 import { ActivatedRoute } from "@angular/router";
 import { Router } from "@angular/router";
+import { environment } from '../../../environments/environment'
 
 
 @Component({
@@ -14,7 +15,7 @@ import { Router } from "@angular/router";
 export class SingleTipComponent implements OnInit {
   
   tips = null;
-
+  serverUrl = environment.apiUrl;
 
   constructor(private tipService: TipService, private router: Router) {}
   

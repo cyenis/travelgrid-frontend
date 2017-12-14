@@ -5,5 +5,5 @@
 
 export const environment = {
   production: true,
-  apiUrl: 'http://travelgrid-server.herokuapp.com'
+  apiUrl: 'http://localhost:3000'
 };

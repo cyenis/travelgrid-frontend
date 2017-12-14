@@ -6,7 +6,7 @@
 
 <h3 class="site-title"><a [routerLink]="['/profile/edit']">Edit Profile</a></h3>
 
-<img src="http://localhost:3000{{ user.picture }} " alt="Profile Picture" class="profile-picture">
+<img src="{{serverUrl}}{{ user.picture }} " alt="Profile Picture" class="profile-picture">
 
 <p> @{{ user.username }}  </p>
 <h3> {{ user.firstName }}  {{ user.lastName }}  </h3>

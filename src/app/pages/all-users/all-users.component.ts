@@ -6,6 +6,8 @@ import { UserService } from '../../services/user.service';
 import { ActivatedRoute } from "@angular/router";
 import { Router } from "@angular/router";
 
+import { environment } from '../../../environments/environment'
+
 
 @Component({
   selector: 'app-all-users',
@@ -15,9 +17,8 @@ import { Router } from "@angular/router";
 export class AllUsersComponent implements OnInit {
 
   users = null;
+  serverUrl = environment.apiUrl;
   
-
-
   constructor(private userService: UserService, private router: Router) {}
   
   ngOnInit() {

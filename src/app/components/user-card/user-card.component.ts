@@ -19,6 +19,7 @@ export class UserCardComponent implements OnInit {
   voted = false;
   answerIndex: number
   picUrl = environment.apiUrl;
+  serverUrl = environment.apiUrl;
 
 
   constructor(private tipService: TipService) { }

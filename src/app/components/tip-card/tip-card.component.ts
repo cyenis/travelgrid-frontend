@@ -23,6 +23,8 @@ export class TipCardComponent implements OnInit {
   voted = false;
   answerIndex: number
   picUrl = environment.apiUrl;
+  serverUrl = environment.apiUrl;
+
 
   constructor(private tipService: TipService) { }
 

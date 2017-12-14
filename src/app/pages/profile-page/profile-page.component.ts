@@ -27,6 +27,7 @@ export class ProfilePageComponent implements OnInit {
   userData: User;
   file: any;
   picUrl = environment.apiUrl;
+  serverUrl = environment.apiUrl;
 
 
 

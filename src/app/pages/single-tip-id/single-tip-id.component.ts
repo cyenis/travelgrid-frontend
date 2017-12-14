@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { Router } from "@angular/router";
 import { TipService } from "../../services/tip.service";
+import { environment } from '../../../environments/environment'
+
 
 @Component({
   selector: 'app-single-tip-id',
@@ -11,7 +13,8 @@ import { TipService } from "../../services/tip.service";
 export class SingleTipIdComponent implements OnInit {
 
   tips: {};
-
+  serverUrl = environment.apiUrl;
+  
   constructor(
     private activatedRoute: ActivatedRoute,
     private tipService: TipService

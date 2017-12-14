@@ -24,6 +24,8 @@ export class EditProfileComponent {
 
   user = this.auth.getUser();
   
+  serverUrl = environment.apiUrl;
+  
   uploader: FileUploader = new FileUploader({
     url: `${this.baseUrl}/auth/upload`
   });
