@@ -24,7 +24,6 @@
             <a *ngIf="!user" [routerLink]="['/auth/login']"><p>Login</p></a>
             <a *ngIf="!user" [routerLink]="['/auth/signup']"><p>Signup</p></a>
             <a *ngIf="user" [routerLink]="['/profile']"><p>
-                <img src="http://localhost:3000{{ user.picture }} " alt="Profile Picture" class="profile-picture"> 
               {{user.firstName}} </p></a>
             <a *ngIf="user" (click)="logout()"><p>Logout</p></a>
           </div>
@@ -71,13 +70,13 @@
 
 
 
-        <a [routerLink]="['/destination']" (click)="toggleMenu()">
+        <a *ngIf="user" [routerLink]="['/destination']" (click)="toggleMenu()">
           <li class="bottom-nav-item">
               <p>Plan a trip</p>
             </li>
         </a>
     
-        <a [routerLink]="['/tips']" (click)="toggleMenu()">
+        <a *ngIf="user"  [routerLink]="['/tips']" (click)="toggleMenu()">
           <li class="bottom-nav-item">
             <p>Tips</p>
           </li>
@@ -89,11 +88,11 @@
           </li>
         </a>
 
-        <a *ngIf="user" [routerLink]="['/users']" (click)="toggleMenu()">
+        <!-- <a *ngIf="user" [routerLink]="['/users']" (click)="toggleMenu()">
           <li class="bottom-nav-item">
             <p>All Users</p>
           </li>
-        </a>
+        </a> -->
     
       
 

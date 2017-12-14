@@ -1,9 +1,9 @@
 <div class="container">
-  
+    
 
 <ul style="list-style: none">
   <div *ngIf="tips">
-    <li *ngFor="let tips of tips">
+    <li *ngFor="let tips of tips" class=single-post-card>
         <a [routerLink]="['/tips',tips._id]">  
     <p>{{tips.title}}</p> 
      <p> {{tips.content}}</p>
@@ -16,5 +16,6 @@
   </div>
 </ul>
 <a [routerLink]="['/add']"> Add a tip </a>
+
 
 </div>

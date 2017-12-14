@@ -1,3 +1,8 @@
+<div class="form-container">
+    
+<h3>Login</h3>
+
+
 <form [ngClass]="{'has-error': error}" novalidate>
   <div class="form-group field" [ngClass]="{'has-error': error}">
     <label>Username</label>
@@ -14,3 +19,6 @@
 </form>
 
 
+<p>Don't have an account? <a [routerLink]="['/auth/signup']">Sign up</a></p>
+
+</div>

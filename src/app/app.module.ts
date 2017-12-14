@@ -70,6 +70,7 @@ import { MapConnectionTipsDestinationComponent } from './components/map-connecti
 import { PlacesListEditorComponent } from './components/places-list-editor/places-list-editor.component';
 import { TipCardComponent } from './components/tip-card/tip-card.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
+import { ChatComponent } from './pages/chat/chat.component';
 
 // Router
 const routes: Routes = [
@@ -124,6 +125,7 @@ const routes: Routes = [
     PlacesListEditorComponent,
     TipCardComponent,
     UserCardComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,

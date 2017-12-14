@@ -1,57 +1,57 @@
+<div class="profile-page-container">
+    <div class="profile-card">  
+            
+      <h3>Editing {{ user.firstName }} profile</h3>
+      <h3 class="site-title"><a [routerLink]="['/profile']">Back to profile</a></h3>
+      <img src="http://localhost:3000{{ user.picture }} " alt="Profile Picture" class="profile-picture">
 
+      <form [ngClass]="{'has-error': error}" #myForm="ngForm" novalidate >
 
-<div class="container">
-    
-  <h1>Edit {{ user.firstName }} profile</h1>
-  <h3 class="site-title"><a [routerLink]="['/profile']">Back to profile</a></h3>
-  <img src="http://localhost:3000{{ user.picture }} " alt="Profile Picture" class="profile-picture">
+        <div class="field" [ngClass]="{'has-error': error}">
+         <p>    <label>Change profile photo</label> </p>
+          <input type="file" name="file" [disabled]="processing" ng2FileSelect [uploader]="uploader" />
+        </div>
 
-  <form [ngClass]="{'has-error': error}" #myForm="ngForm" novalidate >
+        <div class="form-group field" [ngClass]="{'has-error': emailField.invalid && feedbackEnabled}">
+          <label>Email</label>
+          <input type="email" [(ngModel)]="user.email" name="email"  #emailField="ngModel"/>
+          <div class="validation-error" *ngIf="emailField.invalid && emailField.errors.required && feedbackEnabled">Email is required</div>
+        </div>
 
-    <div class="field" [ngClass]="{'has-error': error}">
-      <label>Change profile photo</label>
-      <input type="file" name="file" [disabled]="processing" ng2FileSelect [uploader]="uploader" />
-    </div>
+        <div class="form-group field" [ngClass]="{'has-error': firstNameField.invalid && feedbackEnabled}">
+          <label>First Name</label>
+          <input type="text" [(ngModel)]="user.firstName" name="firstName" #firstNameField="ngModel" required />
+          <div class="validation-error" *ngIf="firstNameField.invalid && feedbackEnabled">First name is required</div>
+        </div>
 
-    <div class="form-group field" [ngClass]="{'has-error': emailField.invalid && feedbackEnabled}">
-      <label>Email</label>
-      <input type="email" [(ngModel)]="user.email" name="email"  #emailField="ngModel"/>
-      <div class="validation-error" *ngIf="emailField.invalid && emailField.errors.required && feedbackEnabled">Email is required</div>
-    </div>
+        <div class="form-group field" [ngClass]="{'has-error': lastNameField.invalid && feedbackEnabled}">
+          <label>Last Name</label>
+          <input type="text" [(ngModel)]="user.lastName" name="lastName" #lastNameField="ngModel" required/>
+          <div class="validation-error" *ngIf="lastNameField.invalid && feedbackEnabled">Last name is required</div>      
+        </div>
 
-    <div class="form-group field" [ngClass]="{'has-error': firstNameField.invalid && feedbackEnabled}">
-      <label>First Name</label>
-      <input type="text" [(ngModel)]="user.firstName" name="firstName" #firstNameField="ngModel" required />
-      <div class="validation-error" *ngIf="firstNameField.invalid && feedbackEnabled">First name is required</div>
-    </div>
+        <div class="form-group field" [ngClass]="{'has-error': lastNameField.invalid && feedbackEnabled}">
+            <label>Birthday</label>
+            <input type="date" [(ngModel)]="user.lastName" name="lastName" #lastNameField="ngModel" required/>
+            <div class="validation-error" *ngIf="lastNameField.invalid && feedbackEnabled">Last name is required</div>      
+          </div>
 
-    <div class="form-group field" [ngClass]="{'has-error': lastNameField.invalid && feedbackEnabled}">
-      <label>Last Name</label>
-      <input type="text" [(ngModel)]="user.lastName" name="lastName" #lastNameField="ngModel" required/>
-      <div class="validation-error" *ngIf="lastNameField.invalid && feedbackEnabled">Last name is required</div>      
-    </div>
+        <div class="field">
+          <label>City From</label>
+          <app-map-autocomplete-cities (onSelect)="handleCityFromChange($event)"></app-map-autocomplete-cities>
+        </div>
 
-    <div class="form-group field" [ngClass]="{'has-error': lastNameField.invalid && feedbackEnabled}">
-        <label>Birthday</label>
-        <input type="date" [(ngModel)]="user.lastName" name="lastName" #lastNameField="ngModel" required/>
-        <div class="validation-error" *ngIf="lastNameField.invalid && feedbackEnabled">Last name is required</div>      
-      </div>
+        <div class="field">
+          <label>City Living now</label>
+          <app-map-autocomplete-cities (onSelect)="handleCityLivingIn($event)"></app-map-autocomplete-cities>
+        </div>
 
-    <div class="field">
-      <label>City From</label>
-      <app-map-autocomplete-cities (onSelect)="handleCityFromChange($event)"></app-map-autocomplete-cities>
-    </div>
+        <div class="form-group actions">
+          <button (click)="updateUser(myForm)"[disabled]="processing">Update Profile</button>
+          <p *ngIf="error" class="error">{{error}}</p>
+        </div>
 
-    <div class="field">
-      <label>City Living now</label>
-      <app-map-autocomplete-cities (onSelect)="handleCityLivingIn($event)"></app-map-autocomplete-cities>
-    </div>
+      </form>
 
-    <div class="form-group actions">
-      <button (click)="updateUser(myForm)"[disabled]="processing">Update Profile</button>
-      <p *ngIf="error" class="error">{{error}}</p>
-    </div>
-
-  </form>
-
+ </div>
 </div>

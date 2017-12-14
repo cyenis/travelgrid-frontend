@@ -1,40 +1,20 @@
-
-  <div class="container">
+<div class="profile-page-container">
     
+<div class="profile-card">  
 
-
-<h1>{{ user.firstName }} profile</h1>
+<h1>{{ user.firstName }}'s profile</h1>
 
 <h3 class="site-title"><a [routerLink]="['/profile/edit']">Edit Profile</a></h3>
 
 <img src="http://localhost:3000{{ user.picture }} " alt="Profile Picture" class="profile-picture">
 
+<p> @{{ user.username }}  </p>
+<h3> {{ user.firstName }}  {{ user.lastName }}  </h3>
+<p> {{ user.email }}  </p>
 
+<p> Lives in {{ user.livingIn.placeName }}  </p>
+<p> Was born in {{ user.cityFrom.placeName }}  </p>
 
+  </div>
 
-
-<p> You are logged in as {{ user.username }}  </p>
-
-<p> Your email is {{ user.email }}  </p>
-
-<p> Your first name is {{ user.firstName }}  </p>
-
-<p> Your last name is {{ user.lastName }}  </p>
-
-<p> Your ID is {{ user.id }}  </p>
-
-<p> You live in {{ user.livingIn.placeName }}  </p>
-
-<p> Your were born in {{ user.cityFrom.placeName }}  </p>
-
-
-
-<!-- <form class="update-user" (ngSubmit)="handleUpdateUserForm(myForm)" #myUserForm="ngForm" novalidate [ngClass]="{saving: saving}">
-        <label for="file-upload" class="custom-file-upload">
-          Choose New Picture
-        </label>
-        <input id="file-upload" type="file" name="file" ng2FileSelect [uploader]="uploader" [disabled]="saving" />
-        <button type="submit" name="button" [disabled]="saving">Save Picture</button>
-      </form> -->
-      
-    </div>
+</div>

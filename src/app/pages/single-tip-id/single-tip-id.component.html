@@ -1,10 +1,40 @@
+<div class="container">
+<div class="single-post-card">
 
-<div *ngIf='tips'>
+
+
+<div *ngIf='tips' class=single-post-card>
+    <div class="profile-header">
+
+        <div class="card-small-profile">
+            <a>
+                <img src="http://localhost:3000{{tips.user_id.picture}}" alt="User Photo" class='user-tip-photo'>
+            </a>       
+        </div>
+       
+        <div class="single-post-user-info">     
+        <div class="single-post-user-name">                         
+          {{tips.user_id.firstName}} {{tips.user_id.lastName}}
+        </div>
+        <div class="single-post-user-location">     
+          {{tips.city}}     
+
+        </div>
+
+        </div>
+    </div>
+
+        <p><img src="http://localhost:3000{{tips.picture}}" alt="Tip Photo" class='tip-photo'> </p>
+        
+
 <p> Title: {{tips.title}}</p>
 <p> Content: {{tips.content}}</p>
 <p>Destination: {{tips.destination}}</p>
- <p><img src="http://localhost:3000{{tips.picture}}" alt="Tip Photo" class='tip-photo'> </p>
- <p>{{tips.user_id.firstName}}</p>
- 
+</div>
 
+
+
+
+
+</div>
 </div>

@@ -1,22 +1,17 @@
-<p>
-  user-card works!
-</p>
-
-
-<div class="question-container" >
+<div class="user-list-container" >
     
-      <!-- Tip info -->
       <div class="left-align-text">
-        <!-- <p>City: {{tip && tip.city}}</p>
-        <p>{{tip && tip.date | date:'short'}}</p> -->
+       
       </div>
+
       <hr />
-      <div *ngIf="user.user_id" class="card-img-container" [ngStyle]="{'background-image': 'url(' + picUrl + user.picture + ')'}">
-      </div>
      
-      <img src="http://localhost:3000{{ user.picture }} " alt="Profile Picture" class="profile-picture">
-      <h3>{{user.username}}</h3>
-      Username: {{user.username}}, Name: {{user.firstName}} {{user.lastName}} {{ user.cityFrom.placeName }} 
+     <div class="card-profile-picture">
+      <img src="http://localhost:3000{{ user.picture }} " alt="Profile Picture" class="card-profile-picture">
+    </div>
+
+      <h3>{{user.firstName}} {{user.lastName}}</h3>
+
     </div>
 
 

@@ -1,8 +1,6 @@
-<div class="container">
-    
-
-Another Users Profile
-
+<div class="profile-page-container">
+     <div class="profile-card">  
+                
 <div *ngIf='user'>
         
 <h1>{{ user.firstName }} profile</h1>
@@ -13,22 +11,11 @@ Another Users Profile
 
 
 
-
-
-
-<p> {{ user.username }}  </p>
-
-<p> Emai: {{ user.email }}  </p>
-
-<p> First name: {{ user.firstName }}  </p>
-
-<p> Last name: {{ user.lastName }}  </p>
-
+<p> @{{ user.username }}  </p>
+<h3> {{ user.firstName }}  {{ user.lastName }}  </h3>
+<p> {{ user.email }}  </p>
 <p> Lives in: {{ user.livingIn.placeName }}  </p>
-
 <p> Born in: {{ user.cityFrom.placeName }}  </p>
 
-<p> Followers {{ user.connections.length }}  </p>
-
-
+    </div>
 </div>

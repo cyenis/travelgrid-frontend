@@ -1,5 +1,18 @@
 .tip-photo {
-    width: 100%;
+    width: 50%;
     height: auto;
     display: flex
 }
+  
+  .single-post-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 10px;
+    background: rgba(0,85,152,0.40);
+    border: 1px solid #005598;
+    border-radius: 5px;
+    
+
+  }
