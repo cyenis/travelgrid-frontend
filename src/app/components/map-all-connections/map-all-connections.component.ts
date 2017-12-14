@@ -184,8 +184,9 @@ export class MapAllConnectionsComponent implements OnInit {
   ];
   
 
-  public customIcon = 'https://png.icons8.com/street-view/dusk/50/000000';
-
+  public customIcon = 'https://png.icons8.com/user-location/Dusk_Wired/50/000000';
+  public customIconMe = 'https://png.icons8.com/user-location/dusk/50/000000';
+  
   constructor(
     private mapsAPILoader: MapsAPILoader,
     private ngZone: NgZone

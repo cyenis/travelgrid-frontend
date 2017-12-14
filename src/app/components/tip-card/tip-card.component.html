@@ -1,12 +1,73 @@
-<p>
-  tip-card works!
-</p>
 
-
-<div class="question-container" >
+<div class="tip-container" >
     
+
+
+    <div *ngIf='tip' class=single-post-card>
+        <div class="profile-header">
+    
+            <div class="card-small-profile">
+                <a>
+                    <img src="http://localhost:3000{{tip.user_id.picture}}" alt="User Photo" class='user-tip-photo'>
+                </a>       
+            </div>
+           
+            <div class="single-post-user-info">     
+            <div class="single-post-user-name">                         
+              {{tip.user_id.firstName}} {{tip.user_id.lastName}}
+            </div>
+            <div class="single-post-user-location">     
+              {{tip.city}}     
+    
+            </div>
+    
+            </div>
+        </div>
+    
+            <p><img src="http://localhost:3000{{tip.picture}}" alt="Tip Photo" class='tip-photo'> </p>
+            
+    
+    <h2>{{tip.title}}</h2>
+    <p>  {{tip.content}}</p>
+    </div>
+    
+    
+    
+
+    
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <!-- Tip info -->
-      <div class="left-align-text">
+      <!-- <div class="left-align-text">
         <p>City: {{tip && tip.city}}</p>
         <p>{{tip && tip.date | date:'short'}}</p>
       </div>
@@ -17,7 +78,7 @@
       </div>
       <p *ngIf="tip.user_id" class="username-text">Posted by: {{tip.user_id && tip.user_id.username}}</p>
       <p *ngIf="!tip.user_id" class="username-text">Asked by: Anonymous</p>
-      <h3>{{tip && tip.content}}</h3>
+      <h3>{{tip && tip.content}}</h3> -->
     
       <!-- Add comment -->
       <!-- <form (ngSubmit)="submitAnswerForm(myForm)" #myForm="ngForm" novalidate>
@@ -50,4 +111,3 @@
         </div>
       </div> -->
     
-    </div>

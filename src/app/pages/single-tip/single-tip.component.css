@@ -1,18 +1,99 @@
 .tip-photo {
-    width: 50%;
-    height: auto;
-    display: flex
+  width: 50%;
+  height: auto;
+  display: flex
 }
-  
-  .single-post-card{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 10px;
-    background: rgba(0,85,152,0.40);
-    border: 1px solid #005598;
-    border-radius: 5px;
-    
 
-  }
+.single-post-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 10px;
+-webkit-box-align: stretch;
+-webkit-align-items: stretch;
+-ms-flex-align: stretch;
+border: 0 solid #000;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+-webkit-box-orient: vertical;
+-webkit-box-direction: normal;
+-webkit-flex-direction: column;
+-ms-flex-direction: column;
+flex-direction: column;
+-webkit-flex-shrink: 0;
+-ms-flex-negative: 0;
+flex-shrink: 0;
+margin: 0;
+
+}
+
+.profile-header{
+  height: 60px;
+  padding: 16px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  border: 0 solid #000;
+  position: relative;
+  border-bottom-width: .5px;
+  border-bottom: 1px solid #efefef;
+}
+
+.card-small-profile {
+  display: block;
+  -webkit-box-flex: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+
+
+
+.user-tip-photo{
+  height: 30px;
+  width: 30px;
+  border-radius:50px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  flex: 0 0 auto;
+  /* overflow: hidden; */
+  position: relative;
+}
+
+.single-post-user-info{
+  margin: 0;
+  padding: 0;
+  position: relative;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  margin-left: 12px;
+  /* overflow: hidden; */
+  display: flex;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  border: 0 solid #000;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-shrink: 0;
+}

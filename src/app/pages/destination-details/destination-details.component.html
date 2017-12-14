@@ -8,43 +8,52 @@
 
 <div class="container">
     
-<br>
+
+        <mat-tab-group mat-stretch-tabs="yes">
+               
+                
+                <mat-tab  label="Connections living in {{city}}"  >
+  
+  
+                    <div class="container">
+                            <div class="tips-box">
+                                    <div class="container">
+                                        <!-- <h2>Connections living in {{city}}</h2> -->
+                                        <img class="travel-icon" src="../assets/icons/network.svg">
+                                        
+                                        <ul class="user-container">
+                                        <li *ngFor="let user of userList">
+                                                <a [routerLink]="['/users',user._id]">                         
+                                          <app-user-card [user]="user"></app-user-card>
+                                         </a>
+                                        </li>
+                                        </ul>
+                                       
+                                    </div>
+                            </div>
+                    </div>
+                </mat-tab>
 
 
-<div class="tips-box">
-        <div class="container">
-            <h2>Users living in {{city}}</h2>
-            <ul class="user-container">
-            <li *ngFor="let user of userList">
-                    <a [routerLink]="['/users',user._id]">                         
-              <app-user-card [user]="user"></app-user-card>
-             </a>
-            </li>
-            </ul>
-            <!-- <div class="view-all" [routerLink]="['/tips']">
-            <p>View All </p>
-            </div> -->
-        </div>
-</div>
-
-
-
-
-<div class="tips-box">
-        <div class="container">
-            <h2>Tips for {{city}}</h2>
-            <ul class="tip-container">
-            <li *ngFor="let tip of tipList">
-                    <a [routerLink]="['/tips',tip._id]">                         
-                <app-tip-card [tip]="tip"></app-tip-card>
-</a>
-            </li>
-            </ul>
-            <!-- <div class="view-all" [routerLink]="['/tips']">
-            <p>View All </p>
-            </div> -->
-        </div>
-</div>
+                <mat-tab label="Tips for {{city}}"  >
+                        <div class="tips-box">
+                                <div class="container">
+                                    <!-- <h2>Tips for {{city}}</h2> -->
+                                    <img class="travel-icon" src="../assets/icons/tip.svg">
+                                    
+                                    <ul class="tip-container">
+                                    <li *ngFor="let tip of tipList">
+                                            <a [routerLink]="['/tips',tip._id]">                         
+                                        <app-tip-card [tip]="tip"></app-tip-card>
+                        </a>
+                                    </li>
+                                    </ul>
+                                    
+                                </div>
+                        </div>
+                        
+                  </mat-tab>
+              </mat-tab-group>
 
 
 
@@ -57,7 +66,12 @@
 
 
 
-<p>
+
+
+
+
+
+<!-- <p>
   Destination-details needed here!
 </p>
 
@@ -98,20 +112,7 @@ Friends living in this location:  </p>
 
 
 
-
-<ul style="list-style: none">
-        <div *ngIf="users">
-          <li *ngFor="let users of users">
-              <a [routerLink]="['/users',users._id]">  
-          <p> Name: {{users.firstName}} {{users.lastName}} From: {{users.cityFrom.placeName}} </p>
-            <!-- <p><img src="http://localhost:3000{{users.picture}}" alt="User Photo" class='User-photo'> </p> -->
-          </a>
-          <!-- <p>{{tips.user_id.firstName}}</p> -->
-          
-          </li>
-        </div>
-      </ul>
-    
+ -->
 
 
 

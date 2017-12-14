@@ -4,6 +4,22 @@
 <ul style="list-style: none">
   <div *ngIf="tips">
     <li *ngFor="let tips of tips" class=single-post-card>
+        <div class="profile-header">
+            <div class="card-small-profile">
+                <a>
+                    <img src="http://localhost:3000{{tips.user_id.picture}}" alt="User Photo" class='user-tip-photo'>
+                </a>       
+            </div>
+            <div class="single-post-user-info">     
+            <div class="single-post-user-name">                         
+              {{tips.user_id.firstName}} {{tips.user_id.lastName}}
+            </div>
+            <div class="single-post-user-location">     
+              {{tips.city}}     
+            </div>
+            </div>
+        </div>
+
         <a [routerLink]="['/tips',tips._id]">  
     <p>{{tips.title}}</p> 
      <p> {{tips.content}}</p>

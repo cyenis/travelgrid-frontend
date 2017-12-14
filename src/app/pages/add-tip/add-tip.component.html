@@ -1,54 +1,51 @@
+<div class="signup-container">
+    
 <div class="container">
-  
+    <div class="form-container">
+        
 
 <form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" novalidate>
   
-    <div class="field" [ngClass]="{'has-error': feedbackEnabled && myTitle.errors}">
-        <p><label>Title</label></p>
+    <div class="form-group field" [ngClass]="{'has-error': feedbackEnabled && myTitle.errors}">
       <input type="text" name="title" [(ngModel)]="tip.title" #myTitle="ngModel" required minlength="4" [disabled]="processing"
-      />
+      placeholder="Thought"/>
       <!-- <div *ngIf="feedbackEnabled && myTitle.errors">
         <p *ngIf="myTitle.errors.required" class="validation">title required</p>
         <p *ngIf="myTitle.errors.minlength" class="validation">title is too short</p>
       </div> -->
     </div>
   
-    <div class="field" [ngClass]="{'has-error': feedbackEnabled && myContent.errors}">
-      <p> <label>Content</label>  </p>
-      <textarea rows="4" cols="50" name="content" [(ngModel)]="tip.content" #myContent="ngModel" [disabled]="processing" min="0" max="99" required placeholder="What's going on?"></textarea>
+    <div class="form-group field" [ngClass]="{'has-error': feedbackEnabled && myContent.errors}">
+      <textarea rows="4" cols="50" name="content" [(ngModel)]="tip.content" #myContent="ngModel" [disabled]="processing" min="0" max="99" required placeholder="What's the story?"></textarea>
       <!-- <div *ngIf="feedbackEnabled && myContent.errors">
         <p *ngIf="myContent.errors.required" class="validation">Please add content</p>
       </div> -->
     </div>
 
-    <div class="field" [ngClass]="{'has-error': feedbackEnabled && myLocation.errors}">
+    <!-- <div class="form-group field" [ngClass]="{'has-error': feedbackEnabled && myLocation.errors}">
         <label>Place Location</label>
         <input type="text" name="location" [(ngModel)]="tip.location" #myLocation="ngModel" [disabled]="processing" min="0" max="99" required/>
-        <!-- <div *ngIf="feedbackEnabled && myContent.errors">
+        <div *ngIf="feedbackEnabled && myContent.errors">
           <p *ngIf="myContent.errors.required" class="validation">Please add content</p>
-        </div> -->
-      </div>
+        </div>
+      </div> -->
 
 
-      <div class="field" [ngClass]="{'has-error': feedbackEnabled && myLocation.errors}">
+      <!-- <div class="form-group field" [ngClass]="{'has-error': feedbackEnabled && myLocation.errors}">
       <label for="postStatus">Public or Private:</label>
       <select name="postStatus" [(ngModel)]="tip.postStatus" #myStatus="ngModel" [disabled]="processing">
           <option value="publicPost" selected>Public</option>
           <option value="privatePost">Private</option>
       </select>
-    </div>
+    </div> -->
 
-
-      
-    
-
-    <div class="field" [ngClass]="{'has-error': feedbackEnabled && myCity.errors}">
+    <div class="form-group field" [ngClass]="{'has-error': feedbackEnabled && myCity.errors}">
       <label>City</label>
       <input type="text" name="city" [(ngModel)]="tip.city" #myCity="ngModel" [disabled]="processing" min="0" required/>
   
-      <!-- <div *ngIf="feedbackEnabled && myCity.errors">
+      <div *ngIf="feedbackEnabled && myCity.errors">
         <p *ngIf="myCity.errors.required" class="validation">Where?</p>
-      </div> -->
+      </div>
     </div>
 
   <div>
@@ -57,16 +54,15 @@
     
   </div>
 
-
-  <div class="field">
+  <div class="form-group field">
       <label>City / Destination</label>
       <app-map-autocomplete-cities (onSelect)="handleLocationSelect($event)" ></app-map-autocomplete-cities>
     </div>
 
 
-    <div class="field">
+    <div class="form-group field">
         <label>Place/ Sight / Restaurant</label>
-        <app-map-autocomplete-places (onSelect)="handleLocationSelect($event)" ></app-map-autocomplete-places>
+        <app-map-autocomplete-places ></app-map-autocomplete-places>
       </div>
 
 
@@ -79,15 +75,14 @@
       </div> -->
     </div>
   
-    <div class="field submit">
-      <input type="submit" [disabled]="processing">Add your tip
+    <div class="form-group field submit">
+      <input type="submit" [disabled]="processing">
       <!-- <div *ngIf="feedbackEnabled && myForm.invalid">
         <p class="validation">there are errors in the form, please review the fields</p>
       </div> -->
     </div>
   </form>
   
-
-
-  
+</div> 
+</div>
 </div>
