@@ -8,6 +8,7 @@ import { FileUploader } from "ng2-file-upload";
 
 
 
+
 @Component({
   selector: 'app-edit-profile',
   templateUrl: './edit-profile.component.html',
@@ -15,7 +16,7 @@ import { FileUploader } from "ng2-file-upload";
 })
 export class EditProfileComponent {
   error: string;
-  baseUrl = "http://localhost:3000";
+  baseUrl = environment.apiUrl 
   feedbackEnabled = false;
   processing = false;
 

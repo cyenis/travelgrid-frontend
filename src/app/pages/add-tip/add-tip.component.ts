@@ -5,6 +5,7 @@ import { ActivatedRoute } from "@angular/router";
 import { Router } from "@angular/router";
 import { FileUploader } from "ng2-file-upload";
 import 'rxjs/add/operator/map';
+import { environment } from '../../environments/environment';
 
 
 import { TipService } from '../../services/tip.service';
@@ -18,8 +19,8 @@ import { Tip } from '../../models/tip.model';
   styleUrls: ['./add-tip.component.css']
 })
 export class AddTipComponent implements OnInit {
-  baseUrl = "http://localhost:3000";
-  feedbackEnabled = false;
+  const apiUrl = environment.apiUrl ;
+    feedbackEnabled = false;
   processing = false;
   tip = {
     filename: "",
@@ -32,7 +33,7 @@ export class AddTipComponent implements OnInit {
   };
   // author = loggedin user;
   uploader: FileUploader = new FileUploader({
-    url: `${this.baseUrl}/tips/upload`
+    url: `${this.apiUrl}/tips/upload`
   });
 
   constructor(private tipService: TipService, private router: Router) {}
