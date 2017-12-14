@@ -5,8 +5,10 @@ import { User } from '../../models/user.model';
 import { UserService } from '../../services/user.service';
 import { AuthService } from '../../services/auth.service';
 import { FileUploader } from "ng2-file-upload";
+import { environment } from '../../../environments/environment'
 
 
+const apiUrl = environment.apiUrl + '';
 
 
 @Component({
@@ -16,7 +18,7 @@ import { FileUploader } from "ng2-file-upload";
 })
 export class EditProfileComponent {
   error: string;
-  baseUrl = environment.apiUrl 
+  baseUrl = environment.apiUrl;
   feedbackEnabled = false;
   processing = false;
 
