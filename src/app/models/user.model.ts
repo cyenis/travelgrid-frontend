@@ -6,6 +6,8 @@ export class User {
     firstName: string;
     lastName: string;
     picture: string;
+    following: object;
+    followers: object;
     livingIn:
     {
      location: {

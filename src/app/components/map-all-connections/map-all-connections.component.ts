@@ -188,5 +188,4 @@ export class MapAllConnectionsComponent implements OnInit {
   ngOnInit() {
   }
 
-
 }

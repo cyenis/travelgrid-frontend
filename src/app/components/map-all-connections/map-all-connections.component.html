@@ -14,7 +14,16 @@
 
 
 <agm-map  *ngIf="users" [latitude]="latitude" [longitude]="longitude" [scrollwheel]="true" [zoom]="zoom" [styles]='customStyle'>
-        <agm-marker 
+        
+  <agm-marker [latitude]="42.1" [longitude]="2.3">
+
+    <agm-info-window >   My location         </agm-info-window>
+  </agm-marker>     
+  
+
+
+
+  <agm-marker 
         *ngFor="let users of users;"
         [latitude]="users.cityFrom.location.latitude" 
         [longitude]="users.cityFrom.location.longitude"
@@ -25,24 +34,26 @@
             <h3 [routerLink]="['/users',users._id]">{{users.username}}</h3>
           </agm-info-window>
     
-    </agm-marker>
-    <agm-marker [latitude]="latitude" [longitude]="longitude">
-            <agm-info-window >
+          <agm-polyline [editable]="false">
+              
+                <agm-polyline-point [latitude]="42.1" [longitude]="2.3">
+              
+                </agm-polyline-point >
+              
+                  <agm-polyline-point 
+                      [latitude]="users.cityFrom.location.latitude"
+                      [longitude]="users.cityFrom.location.longitude">
+                  </agm-polyline-point>
+              
+              </agm-polyline>
+              
 
-</agm-info-window>
-</agm-marker>     
+
+          
+    </agm-marker>
+
     
-    <agm-marker [latitude]="42.5" [longitude]="2.4" [iconUrl]="customIcon" ></agm-marker>     
-    <agm-marker [latitude]="45.5" [longitude]="3.4"         [iconUrl]="customIcon"> 
-        ></agm-marker>     
-    <agm-marker [latitude]="42.32" [longitude]="2.3" [iconUrl]="customIcon"></agm-marker>     
-    <agm-marker [latitude]="32.5" [longitude]="9.4" [iconUrl]="customIcon"></agm-marker>     
-    <agm-marker [latitude]="62.32" [longitude]="3.3" [iconUrl]="customIcon"></agm-marker>     
-    <agm-marker [latitude]="9.0" [longitude]="5.0"         [iconUrl]="customIcon"> 
-        ></agm-marker>     
-    
-    
-      </agm-map>
+ </agm-map>
 
 
 

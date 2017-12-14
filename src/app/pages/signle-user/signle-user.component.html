@@ -15,6 +15,7 @@ Another Users Profile
 
 
 
+
 <p> {{ user.username }}  </p>
 
 <p> Emai: {{ user.email }}  </p>
@@ -26,5 +27,8 @@ Another Users Profile
 <p> Lives in: {{ user.livingIn.placeName }}  </p>
 
 <p> Born in: {{ user.cityFrom.placeName }}  </p>
+
+<p> Followers {{ user.connections.length }}  </p>
+
 
 </div>

@@ -37,6 +37,9 @@
           <option value="privatePost">Private</option>
       </select>
     </div>
+
+
+      
     
 
     <div class="field" [ngClass]="{'has-error': feedbackEnabled && myDestination.errors}">
@@ -77,11 +80,14 @@
     </div>
   
     <div class="field submit">
-      <button type="submit" [disabled]="processing">Add your tip</button>
+      <input type="submit" [disabled]="processing">Add your tip
       <!-- <div *ngIf="feedbackEnabled && myForm.invalid">
         <p class="validation">there are errors in the form, please review the fields</p>
       </div> -->
     </div>
   </form>
+  
+
+
   
 </div>

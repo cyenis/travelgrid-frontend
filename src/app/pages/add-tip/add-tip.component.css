@@ -28,13 +28,9 @@ div {
     background-color: #f2f2f2;
     padding: 20px;
 }
-.button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+
+.helga {
+background: #11BABB;
+box-shadow: inset 0 0 0 0 #C8C7CC, inset 0 0 0 0 #C8C7CC;
+border-radius: 50px;
 }
