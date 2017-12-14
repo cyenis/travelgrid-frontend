@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://appname-api.herokuapp.com'
+  apiUrl: 'https://travelgrid-server.herokuapp.com'
 };
